@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene Versions/Main Menu Screen.unity
+    guid: be1a5df89a2f96c4d975f1cbac300247
+  - enabled: 1
+    path: Assets/Scene Versions/Main.unity
+    guid: 33d1c42122e908744984ae3b3f2ef2c0
+  - enabled: 1
+    path: Assets/Scene Versions/Prologue Scene.unity
+    guid: 2eeae7ccd43ac0842bccb74c6e2974ed
+  - enabled: 1
+    path: Assets/Scene Versions/TransitionScene.unity
+    guid: 721798237aac1da4893179cdfec39739
+  - enabled: 1
+    path: Assets/Scene Versions/Happy Ending.unity
+    guid: 80d604dac21d17743af0622aa31e489c
+  - enabled: 1
+    path: Assets/Scene Versions/GameOver.unity
+    guid: 9ebe24aa46d50c242a68921d06dd31ce
+  m_configObjects: {}

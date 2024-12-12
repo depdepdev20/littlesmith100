@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
+  m_Name: Aetherium Rune Staff
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 2dc2ce5e4deae7049b18dd93b3dc3231, type: 3}
+  blueprintName: Aetherium Rune Staff
+  weaponToUnlock: {fileID: 11400000, guid: 693ef8e378f56374483a1de98e2a65a1, type: 2}
+  buyPrice: 5000

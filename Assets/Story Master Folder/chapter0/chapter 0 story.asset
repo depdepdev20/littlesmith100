@@ -1,0 +1,816 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a69ff5ed214494b835d86b8438ac53, type: 3}
+  m_Name: chapter 0 story
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 348eae8e-cd72-4d51-877d-93d1e6e141bd
+    BasePortName: Output
+    TargetNodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
+    TargetPortName: Input
+  - BaseNodeGuid: 348eae8e-cd72-4d51-877d-93d1e6e141bd
+    BasePortName: Output
+    TargetNodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
+    TargetPortName: Input
+  - BaseNodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+    BasePortName: Output
+    TargetNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    TargetPortName: Input
+  - BaseNodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
+    BasePortName: Output
+    TargetNodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
+    TargetPortName: Input
+  - BaseNodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
+    BasePortName: Output
+    TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    TargetPortName: Input
+  - BaseNodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
+    BasePortName: Output
+    TargetNodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
+    TargetPortName: Input
+  - BaseNodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
+    BasePortName: True
+    TargetNodeGuid: 389c6ef3-b834-4d8c-9299-6a8ee0fc1b62
+    TargetPortName: Input
+  - BaseNodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
+    BasePortName: False
+    TargetNodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    TargetPortName: Input
+  - BaseNodeGuid: 389c6ef3-b834-4d8c-9299-6a8ee0fc1b62
+    BasePortName: True
+    TargetNodeGuid: 8d7d41b9-2766-4a7d-abc2-7e7762e79d36
+    TargetPortName: Input
+  - BaseNodeGuid: 389c6ef3-b834-4d8c-9299-6a8ee0fc1b62
+    BasePortName: False
+    TargetNodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
+    TargetPortName: Input
+  - BaseNodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    BasePortName: Output
+    TargetNodeGuid: 309d3731-a3a8-4b30-9311-4ea4dc432769
+    TargetPortName: Input
+  - BaseNodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    BasePortName: Output
+    TargetNodeGuid: 309d3731-a3a8-4b30-9311-4ea4dc432769
+    TargetPortName: Input
+  - BaseNodeGuid: 9916fa84-30a7-4b60-9c52-6aa0264e336e
+    BasePortName: Output
+    TargetNodeGuid: dd912240-a57a-4ad6-93a2-91cb210255d5
+    TargetPortName: Input
+  - BaseNodeGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
+    BasePortName: Output
+    TargetNodeGuid: d48ec8bf-f192-4342-931c-871a5eebb02b
+    TargetPortName: Input
+  - BaseNodeGuid: 8d7d41b9-2766-4a7d-abc2-7e7762e79d36
+    BasePortName: Continue
+    TargetNodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
+    TargetPortName: Input
+  - BaseNodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
+    BasePortName: Continue
+    TargetNodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
+    TargetPortName: Input
+  - BaseNodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    BasePortName: Continue
+    TargetNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: d7d4887f-a48e-4fa2-a9ca-698674802f3f
+    TargetNodeGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: a272c8b0-6e47-4fe4-9a99-40eb3470b8ec
+    TargetNodeGuid: 9916fa84-30a7-4b60-9c52-6aa0264e336e
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: ebe3aad5-27e5-4b54-af0e-3ffbbeb5a747
+    TargetNodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: d7d4887f-a48e-4fa2-a9ca-698674802f3f
+    TargetNodeGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: a272c8b0-6e47-4fe4-9a99-40eb3470b8ec
+    TargetNodeGuid: 9916fa84-30a7-4b60-9c52-6aa0264e336e
+    TargetPortName: Input
+  - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    BasePortName: ebe3aad5-27e5-4b54-af0e-3ffbbeb5a747
+    TargetNodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    TargetPortName: Input
+  - BaseNodeGuid: d48ec8bf-f192-4342-931c-871a5eebb02b
+    BasePortName: Continue
+    TargetNodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+    TargetPortName: Input
+  - BaseNodeGuid: 309d3731-a3a8-4b30-9311-4ea4dc432769
+    BasePortName: Continue
+    TargetNodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
+    TargetPortName: Input
+  - BaseNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    BasePortName: Continue
+    TargetNodeGuid: 9773c471-ed62-4c1c-88e6-f8ea9abae5a5
+    TargetPortName: Input
+  - BaseNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    BasePortName: Output
+    TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    TargetPortName: Input
+  - BaseNodeGuid: dd912240-a57a-4ad6-93a2-91cb210255d5
+    BasePortName: Continue
+    TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    TargetPortName: Input
+  EndDatas:
+  - NodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
+    Position: {x: 1003.3333, y: -466}
+    EndNodeType:
+      Value: 1
+  - NodeGuid: 9773c471-ed62-4c1c-88e6-f8ea9abae5a5
+    Position: {x: 4144.6665, y: 310.66666}
+    EndNodeType:
+      Value: 1
+  StartDatas:
+  - NodeGuid: 348eae8e-cd72-4d51-877d-93d1e6e141bd
+    Position: {x: -852.6667, y: 308}
+  EventDatas:
+  - NodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+    Position: {x: 2006.6666, y: 807.3334}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 2e148dc33100e6b48ad9dece99bdd6ec, type: 2}
+      Value:
+        Value: 350
+      EventType:
+        Value: 4
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  - NodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    Position: {x: 2271.3333, y: 966}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 20fa5770fd22b344f8225a698884df26, type: 2}
+      Value:
+        Value: 1
+      EventType:
+        Value: 3
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  - NodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
+    Position: {x: 2014.6666, y: -626.6666}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 2e148dc33100e6b48ad9dece99bdd6ec, type: 2}
+      Value:
+        Value: 700
+      EventType:
+        Value: 3
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  - NodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
+    Position: {x: 2851.3333, y: -155.33333}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers: []
+    EventData_BoolModifiers:
+    - VariableSO: {fileID: 11400000, guid: 1e8d881f92fd70a4bb1f1b15f51b2a7b, type: 2}
+      Value:
+        Value: 0
+      EventType:
+        Value: 1
+    Container_DialogueEventSOs: []
+  - NodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
+    Position: {x: 2056, y: -206}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 20fa5770fd22b344f8225a698884df26, type: 2}
+      Value:
+        Value: 1
+      EventType:
+        Value: 4
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  BranchDatas:
+  - NodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
+    Position: {x: -622.6667, y: 282}
+    trueGuidNode: 389c6ef3-b834-4d8c-9299-6a8ee0fc1b62
+    falseGuidNode: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    EventData_StringConditions: []
+    EventData_FloatConditions: []
+    EventData_IntConditions: []
+    EventData_BoolConditions:
+    - VariableSO: {fileID: 11400000, guid: 1e8d881f92fd70a4bb1f1b15f51b2a7b, type: 2}
+      Value:
+        Value: 0
+      EventType:
+        Value: 1
+  - NodeGuid: 389c6ef3-b834-4d8c-9299-6a8ee0fc1b62
+    Position: {x: -76.666664, y: -53.333336}
+    trueGuidNode: 8d7d41b9-2766-4a7d-abc2-7e7762e79d36
+    falseGuidNode: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
+    EventData_StringConditions: []
+    EventData_FloatConditions: []
+    EventData_IntConditions: []
+    EventData_BoolConditions:
+    - VariableSO: {fileID: 11400000, guid: 35c708f807124194fae3ef26bda564d8, type: 2}
+      Value:
+        Value: 0
+      EventType:
+        Value: 0
+  DialogueDatas:
+  - NodeGuid: 8d7d41b9-2766-4a7d-abc2-7e7762e79d36
+    Position: {x: 448, y: -732.6666}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Messenger
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: 8d3bf0b1-c45e-4969-a471-ee6a44cd5db5
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: thank you for helping the brigade.
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
+    Position: {x: 560.6667, y: -187.33333}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Messenger
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: c90f6de7-4d1d-4e20-9303-722dabbb4e28
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: if its not a problem, please hurry up
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    - ID:
+        Value: 3
+      GuidID:
+        Value: c74eb79a-2705-4abe-a346-1e629ba30686
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: i dont know how long they will last without proper weapons....
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    Position: {x: -20, y: 374}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Messenger
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: 672ac643-3310-4f76-9182-e730b1e9669a
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: tells the story and situation.....
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    Position: {x: 415.33334, y: 354.66666}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: you
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: c41cda58-e79b-4936-8930-eb6ff42393ee
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: so what will you do?
+      - LanguageType: 2
+        LanguageGenericType: was geht?
+      - LanguageType: 3
+        LanguageGenericType: "s\xE5 hvad s\xE5?"
+      - LanguageType: 4
+        LanguageGenericType: Quid ergo est?
+      - LanguageType: 5
+        LanguageGenericType: "si ce jusqu'\xE0?"
+      - LanguageType: 6
+        LanguageGenericType: "cos\xEC quanto sopra?"
+      - LanguageType: 7
+        LanguageGenericType: "lai k\u0101di up?"
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 21300000, guid: 96bee2593b2e4da4c9aaeb0e13b1e0a6, type: 3}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports:
+    - PortGuid: ebe3aad5-27e5-4b54-af0e-3ffbbeb5a747
+      InputGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+      OutputGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    - PortGuid: a272c8b0-6e47-4fe4-9a99-40eb3470b8ec
+      InputGuid: 9916fa84-30a7-4b60-9c52-6aa0264e336e
+      OutputGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+    - PortGuid: d7d4887f-a48e-4fa2-a9ca-698674802f3f
+      InputGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
+      OutputGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
+  - NodeGuid: dd912240-a57a-4ad6-93a2-91cb210255d5
+    Position: {x: 1607.3334, y: 274.66666}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Messenger
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: 1e049499-64af-4ac1-84cf-7410b82695de
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: Alright, i understand. business is business.
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: d48ec8bf-f192-4342-931c-871a5eebb02b
+    Position: {x: 1522, y: 807.3334}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The messenger
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: f381f58c-a9e1-4314-a2e4-8efc01f4a20c
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: Thenk You!Thank you!
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    - ID:
+        Value: 3
+      GuidID:
+        Value: be383b2e-f4cf-45e0-99cb-318d46e940e5
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: You dont understand how much it meant !
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: 309d3731-a3a8-4b30-9311-4ea4dc432769
+    Position: {x: 1508, y: -626.6666}
+    DialogueData_Names: []
+    DialogueData_Texts:
+    - ID:
+        Value: 1
+      GuidID:
+        Value: a23c8bba-57e1-42db-8a3c-312dee24b71f
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: agh... of course...alright...
+      - LanguageType: 2
+        LanguageGenericType: OK?
+      - LanguageType: 3
+        LanguageGenericType: Okay?
+      - LanguageType: 4
+        LanguageGenericType: ok?
+      - LanguageType: 5
+        LanguageGenericType: d'accord?
+      - LanguageType: 6
+        LanguageGenericType: ok?
+      - LanguageType: 7
+        LanguageGenericType: labi?
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 8300000, guid: a285a6fd2104b50499aca3a110f6a74c, type: 3}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 21300000, guid: c3f660ceb67f9ea46ae25b233a4967c7, type: 3}
+    DialogueData_Ports: []
+  - NodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    Position: {x: 3628, y: -285.33334}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: you
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: 5b182d6a-7d08-4026-994a-c6e7eeff9432
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: i hope i made the right choice
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 21300000, guid: 54246793264b0784b8502e8629e06f33, type: 3}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  ChoiceDatas:
+  - NodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    Position: {x: 1132, y: 144.66667}
+    ChoiceStateTypes:
+      Value: 1
+    Text:
+    - LanguageType: 1
+      LanguageGenericType: great. Pay Double, my service doesnt come cheap!
+    - LanguageType: 2
+      LanguageGenericType: nicht die meisten
+    - LanguageType: 3
+      LanguageGenericType: ikke de fleste
+    - LanguageType: 4
+      LanguageGenericType: nec plus
+    - LanguageType: 5
+      LanguageGenericType: pas plus
+    - LanguageType: 6
+      LanguageGenericType: non la maggior parte
+    - LanguageType: 7
+      LanguageGenericType: ne pats
+    AudioClips:
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 3
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 4
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 5
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 6
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 7
+      LanguageGenericType: {fileID: 0}
+    EventData_StringConditions: []
+    EventData_FloatConditions: []
+    EventData_IntConditions: []
+    EventData_BoolConditions: []
+  - NodeGuid: 9916fa84-30a7-4b60-9c52-6aa0264e336e
+    Position: {x: 1119.3334, y: 390}
+    ChoiceStateTypes:
+      Value: 2
+    Text:
+    - LanguageType: 1
+      LanguageGenericType: Just pay the base price.
+    - LanguageType: 2
+      LanguageGenericType: "i zahlen Sie zu f\xE4rben"
+    - LanguageType: 3
+      LanguageGenericType: Jeg betaler at farve dig
+    - LanguageType: 4
+      LanguageGenericType: i Tu colorando redde ei
+    - LanguageType: 5
+      LanguageGenericType: je paie pour vous couleur
+    - LanguageType: 6
+      LanguageGenericType: ho pagato per colorare voi
+    - LanguageType: 7
+      LanguageGenericType: "man ir j\u0101maks\u0101, lai kr\u0101su jums"
+    AudioClips:
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 3
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 4
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 5
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 6
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 7
+      LanguageGenericType: {fileID: 0}
+    EventData_StringConditions: []
+    EventData_FloatConditions: []
+    EventData_IntConditions: []
+    EventData_BoolConditions: []
+  - NodeGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
+    Position: {x: 1100, y: 654.6667}
+    ChoiceStateTypes:
+      Value: 1
+    Text:
+    - LanguageType: 1
+      LanguageGenericType: Alright, i will half it for you.
+    - LanguageType: 2
+      LanguageGenericType: "i bezahlen mich zu f\xE4rben!"
+    - LanguageType: 3
+      LanguageGenericType: Jeg betaler til at farve mig!
+    - LanguageType: 4
+      LanguageGenericType: I ad lanas redde mihi!
+    - LanguageType: 5
+      LanguageGenericType: je paie pour moi la couleur!
+    - LanguageType: 6
+      LanguageGenericType: ho pagato per colorare me!
+    - LanguageType: 7
+      LanguageGenericType: "man ir j\u0101maks\u0101, lai kr\u0101su mani!"
+    AudioClips:
+    - LanguageType: 1
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 2
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 3
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 4
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 5
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 6
+      LanguageGenericType: {fileID: 0}
+    - LanguageType: 7
+      LanguageGenericType: {fileID: 0}
+    EventData_StringConditions: []
+    EventData_FloatConditions: []
+    EventData_IntConditions: []
+    EventData_BoolConditions: []

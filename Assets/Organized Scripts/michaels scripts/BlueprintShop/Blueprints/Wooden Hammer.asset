@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
+  m_Name: Wooden Hammer
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: e74a46acb77139841bc3f33949be4098, type: 3}
+  blueprintName: Wooden Hammer
+  weaponToUnlock: {fileID: 11400000, guid: de7c24cb51d19be46953b6e6c041e5d3, type: 2}
+  buyPrice: 0
