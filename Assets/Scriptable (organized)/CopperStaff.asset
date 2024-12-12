@@ -22,7 +22,7 @@ MonoBehaviour:
     quantity: 3
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - image: {fileID: 21300000, guid: 869a1980b6002b44d9eab638f8b0bc77, type: 3}
     name: Copper
     quantity: 3
     is_unlocked: 0

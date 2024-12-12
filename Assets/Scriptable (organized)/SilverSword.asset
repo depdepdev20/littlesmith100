@@ -22,7 +22,7 @@ MonoBehaviour:
     quantity: 3
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - image: {fileID: 21300000, guid: 6696923af74f6b14b9fd1f9841d5261b, type: 3}
     name: Silver
     quantity: 3
     is_unlocked: 0

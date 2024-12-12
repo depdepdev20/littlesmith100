@@ -22,7 +22,7 @@ MonoBehaviour:
     quantity: 3
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - image: {fileID: 21300000, guid: b7e83a641ff9e5c498b61db90add9327, type: 3}
     name: Emerald
     quantity: 1
     is_unlocked: 0

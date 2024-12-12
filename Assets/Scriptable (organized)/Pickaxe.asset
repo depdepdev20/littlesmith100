@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 53990a35158447544a8ad8a86938b78b, type: 3}
   weaponName: Pickaxe
-  modelPrefab: {fileID: 919132149155446097, guid: cd8d34e72a21e4f4da81097d8eed4a8c, type: 3}
+  model3D: {fileID: 0}
   unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
