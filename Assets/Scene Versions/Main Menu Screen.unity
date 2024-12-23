@@ -428,8 +428,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278203528
-  m_fontColor: {r: 0.5345911, g: 0.20478082, b: 0, a: 1}
+    rgba: 4284390399
+  m_fontColor: {r: 1, g: 0.60960037, b: 0.3679244, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6065,7 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 2046033198}
-  dateText: {fileID: 1666836623}
+  dayCountText: {fileID: 0}
 --- !u!114 &1298373052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6078,17 +6078,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492281e83a7e5084d9d50eb74556be4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timestamp:
-    year: 0
-    season: 0
-    day: 0
-    hour: 0
-    minute: 0
+  totalDays: 0
   timeScale: 10
   sunTransform: {fileID: 8571099}
   moonTransform: {fileID: 1393935633}
-  dayAmbientColor: {r: 1, g: 1, b: 1, a: 1}
-  nightAmbientColor: {r: 0.1, g: 0.1, b: 0.25, a: 1}
+  rollthegoodending: {fileID: 0}
+  gotgameover: {fileID: 0}
 --- !u!1 &1301472642
 GameObject:
   m_ObjectHideFlags: 0
