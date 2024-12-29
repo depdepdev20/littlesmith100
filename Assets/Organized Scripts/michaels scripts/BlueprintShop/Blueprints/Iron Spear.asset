@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Iron Spear
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 1d8daedfe248cb446b479053393953d6, type: 3}
+  image: {fileID: 21300000, guid: e47f0d1c3a8ced443b1ce7a5e5c352c7, type: 3}
   blueprintName: Iron Spear
   weaponToUnlock: {fileID: 11400000, guid: cbeda71a81bc0de42a47639fe1c1f864, type: 2}
-  buyPrice: 0
+  buyPrice: 1500
+  chapter: 1

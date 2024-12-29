@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Aetherium Rune Spear
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 0b0663fe80bc25149be17c974bfbbc3b, type: 3}
+  image: {fileID: 21300000, guid: 5a158c881c5a3a742a6e9dce66bb2815, type: 3}
   blueprintName: Aetherium Rune Spear
   weaponToUnlock: {fileID: 11400000, guid: 251f04336925c5c40818340259a56cb8, type: 2}
-  buyPrice: 1000
+  buyPrice: 32000
+  chapter: 4

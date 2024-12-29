@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Aetherium Rune Sword
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: d9b89b1e494df764fa1b9371d34cc4b9, type: 3}
+  image: {fileID: 21300000, guid: c4d4e18e3b567ba418821b3800b6e93a, type: 3}
   blueprintName: Aetherium Rune Sword
   weaponToUnlock: {fileID: 11400000, guid: e992fc0a49d755041adc35b702319da4, type: 2}
-  buyPrice: 0
+  buyPrice: 30000
+  chapter: 4

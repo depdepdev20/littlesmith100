@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Carpenter's Mallet
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9d486200c2b03bc498978ed2b01d16ce, type: 3}
+  image: {fileID: 21300000, guid: 06870feafe5e8c848b5a205402f515a7, type: 3}
   blueprintName: Carpenter's Mallet
   weaponToUnlock: {fileID: 11400000, guid: e7395faab20996543a095517fda05ec9, type: 2}
   buyPrice: 0
+  chapter: 0

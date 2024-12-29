@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Copper Healing Staff
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 0b0663fe80bc25149be17c974bfbbc3b, type: 3}
+  image: {fileID: 21300000, guid: 49d073bdac5d7bb4fbfbebd435c01158, type: 3}
   blueprintName: Copper Healing Staff
   weaponToUnlock: {fileID: 11400000, guid: 0bf5f8d25c0ac924e9593fb0f70251ff, type: 2}
-  buyPrice: 0
+  buyPrice: 2000
+  chapter: 2

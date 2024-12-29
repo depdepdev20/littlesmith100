@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Iron Sword
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: f377afb0c1ea8644b9f7e9cd2aec607e, type: 3}
+  image: {fileID: 21300000, guid: 5ea8294bf68e82848a6d8f171c248f81, type: 3}
   blueprintName: Iron Sword
   weaponToUnlock: {fileID: 11400000, guid: dc5b83af52ac99849bf73ed784da5c34, type: 2}
-  buyPrice: 0
+  buyPrice: 1000
+  chapter: 1

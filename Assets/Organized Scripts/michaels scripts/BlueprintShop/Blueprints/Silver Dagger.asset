@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Silver Dagger
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 1a3cfe7fbcb78c740943d448e6b36931, type: 3}
+  image: {fileID: 21300000, guid: 4d56caa8331bb1349b58b139a1512917, type: 3}
   blueprintName: Silver Dagger
   weaponToUnlock: {fileID: 11400000, guid: 007c59620d432f640bce55bfbae58d33, type: 2}
-  buyPrice: 0
+  buyPrice: 2500
+  chapter: 2

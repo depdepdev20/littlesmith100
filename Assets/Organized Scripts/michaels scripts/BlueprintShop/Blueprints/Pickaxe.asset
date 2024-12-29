@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 92575201d3fc7434cbdc7edfd392a498, type: 3}
+  image: {fileID: 21300000, guid: 39745aad46b831d45a7aa38ddbc5ebf3, type: 3}
   blueprintName: Pickaxe
   weaponToUnlock: {fileID: 11400000, guid: fe8e7c83fe9bd4f48890123e93d7debf, type: 2}
   buyPrice: 0
+  chapter: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b04a21f454d084fa29dc51dbbae978, type: 3}
   m_Name: Chaos Sword
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: a1ca0f0ff055f084c8950bfebf495ef9, type: 3}
+  image: {fileID: 21300000, guid: 19401008125bf8142aee2b9581b62d44, type: 3}
   weaponName: Chaos Highlord
-  model3D: {fileID: 0}
+  modelPrefab: {fileID: 919132149155446097, guid: 07fd5e0390cb8114f8dbce69af607da4, type: 3}
   unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: ca3ea1b1938613741a1f6895157b0e5a, type: 3}

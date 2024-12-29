@@ -9,16 +9,16 @@ public class ResourceManagerCode : MonoBehaviour
 
     // Resource values
     private int coins = 1000000;
-    private int wood = 100000;
-    private int iron = 100;
-    private int orichalcum = 100;
-    private int platinum = 100;
-    private int emerald = 100;
-    private int diamond = 100;
-    private int amethyst = 100;
-    private int obsidian = 100;
-    private int silver = 100; // New material
-    private int copper = 100; // New material
+    private int wood = 100;
+    private int iron = 200;
+    private int silver = 300; // New material
+    private int copper = 400; // New material
+    private int emerald = 500;
+    private int diamond = 600;
+    private int platinum = 700;
+    private int orichalcum = 800;
+    private int amethyst = 900;
+    private int obsidian = 1000;
     public event Action OnResourcesUpdated;
 
     private void Awake()

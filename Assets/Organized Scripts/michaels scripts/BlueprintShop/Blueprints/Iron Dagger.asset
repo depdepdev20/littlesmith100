@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Iron Dagger
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 10ea6b1bd4cd2ef4e9842aec8b3439eb, type: 3}
+  image: {fileID: 21300000, guid: 4517ada410c6b2844b20b1f4937affff, type: 3}
   blueprintName: Iron Dagger
   weaponToUnlock: {fileID: 11400000, guid: 73f7deb990d6afb42bcf865101481eae, type: 2}
-  buyPrice: 0
+  buyPrice: 700
+  chapter: 1

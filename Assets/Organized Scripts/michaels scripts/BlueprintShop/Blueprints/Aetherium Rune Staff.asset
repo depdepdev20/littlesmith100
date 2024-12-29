@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Aetherium Rune Staff
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2dc2ce5e4deae7049b18dd93b3dc3231, type: 3}
+  image: {fileID: 21300000, guid: 1ce44b82115e1fe40a83634da364d8da, type: 3}
   blueprintName: Aetherium Rune Staff
   weaponToUnlock: {fileID: 11400000, guid: 693ef8e378f56374483a1de98e2a65a1, type: 2}
-  buyPrice: 5000
+  buyPrice: 27000
+  chapter: 4

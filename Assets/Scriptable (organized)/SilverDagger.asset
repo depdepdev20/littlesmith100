@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b04a21f454d084fa29dc51dbbae978, type: 3}
   m_Name: SilverDagger
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 8cdfcb231c67d824998eee166f0c50de, type: 3}
+  image: {fileID: 21300000, guid: 4d56caa8331bb1349b58b139a1512917, type: 3}
   weaponName: Silver Dagger
-  model3D: {fileID: 0}
-  unlocked: 0
+  modelPrefab: {fileID: 919132149155446097, guid: 20d35d809db1423439562531d9e3919c, type: 3}
+  unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
     name: Wood

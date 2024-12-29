@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4735d531e5a3f340b91d3473719a04a, type: 3}
   m_Name: Silver Sword
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: e74a46acb77139841bc3f33949be4098, type: 3}
+  image: {fileID: 21300000, guid: 6450777f585a13546967c6338d726a27, type: 3}
   blueprintName: Silver Sword
   weaponToUnlock: {fileID: 11400000, guid: 109e180bb5764a047bf32563cfa15acd, type: 2}
-  buyPrice: 9000
+  buyPrice: 3000
+  chapter: 2
