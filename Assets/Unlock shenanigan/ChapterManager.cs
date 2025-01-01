@@ -8,47 +8,46 @@ public class ChapterManager : MonoBehaviour
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private int totalChapters = 7;
 
-    // List to store all dropdowns
     private List<TMP_Dropdown> chapterDropdowns = new List<TMP_Dropdown>();
 
-    // Dropdown options per chapter
-    private Dictionary<int, List<string>> chapterDropdownOptions = new Dictionary<int, List<string>>()
+    [System.Serializable]
+    public class OptionData
     {
-        { 0, new List<string> { "wood" } },
-        { 1, new List<string> { "wood", "iron" } },
-        { 2, new List<string> { "wood", "iron", "copper", "silver" } },
-        { 3, new List<string> { "wood", "iron", "copper", "silver", "emerald", "diamond" } },
-        { 4, new List<string> { "wood", "iron", "copper", "silver", "emerald", "diamond", "platinum", "orichalcum" } },
-        { 5, new List<string> { "wood", "iron", "copper", "silver", "emerald", "diamond", "platinum", "orichalcum", "amethyst", "obsidian" } }
-    };
+        public string Text; // Name of the material
+        public Sprite Icon; // Icon of the material
+    }
 
-    // Find all dropdowns at the start
+    [System.Serializable]
+    public class ChapterOptions
+    {
+        public List<OptionData> Options; // List of options for a chapter
+    }
+
+    [Header("Chapter Options")]
+    [SerializeField] private List<ChapterOptions> chapterDropdownOptions;
+
     private void Start()
     {
-        UpdateDropdownList();
         UpdateDropdownOptions(currentChapter);
     }
 
-    // Continuously check for new dropdowns and update their options
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
             UnlockNextChapter();
         }
-
-        // Update dropdowns every frame
         UpdateDropdownList();
-        UpdateDropdownOptions(currentChapter);
+
     }
 
-    // Unlock the next chapter
     public void UnlockNextChapter()
     {
         if (currentChapter < totalChapters)
         {
             currentChapter++;
             Debug.Log($"Chapter increased to {currentChapter}");
+            UpdateDropdownOptions(currentChapter);
         }
         else
         {
@@ -56,35 +55,91 @@ public class ChapterManager : MonoBehaviour
         }
     }
 
-    // Find all dropdowns dynamically in the scene
+
     private void UpdateDropdownList()
     {
         TMP_Dropdown[] allDropdowns = FindObjectsOfType<TMP_Dropdown>();
 
-        // Add new dropdowns to the list
         foreach (TMP_Dropdown dropdown in allDropdowns)
         {
             if (!chapterDropdowns.Contains(dropdown))
             {
                 chapterDropdowns.Add(dropdown);
                 Debug.Log($"New dropdown detected: {dropdown.gameObject.name}");
+                UpdateDropdownOptions(currentChapter);
             }
         }
+
+        // Cleanup: Remove null references from the list
+        chapterDropdowns.RemoveAll(dropdown => dropdown == null);
     }
 
-    // Update dropdown options for all dropdowns
     private void UpdateDropdownOptions(int chapter)
     {
-        List<string> options = chapterDropdownOptions.ContainsKey(chapter) ? chapterDropdownOptions[chapter] : new List<string>();
+        // Accumulate options up to the current chapter
+        List<OptionData> availableOptions = new List<OptionData>();
+        for (int i = 0; i <= chapter && i < chapterDropdownOptions.Count; i++)
+        {
+            availableOptions.AddRange(chapterDropdownOptions[i].Options);
+        }
 
         foreach (TMP_Dropdown dropdown in chapterDropdowns)
         {
             if (dropdown == null) continue;
 
+            Debug.Log($"Updating dropdown: {dropdown.name}");
+
+            // Clear existing options
             dropdown.ClearOptions();
-            dropdown.AddOptions(options.Count > 0 ? options : new List<string> { "Default Option" });
-            dropdown.RefreshShownValue();
-            LayoutRebuilder.ForceRebuildLayoutImmediate(dropdown.transform as RectTransform);
+
+            // Convert accumulated options to TMP_Dropdown.OptionData
+            List<TMP_Dropdown.OptionData> tmpOptions = new List<TMP_Dropdown.OptionData>();
+            foreach (var option in availableOptions)
+            {
+                tmpOptions.Add(new TMP_Dropdown.OptionData(option.Text, option.Icon));
+            }
+
+            // Add new options
+            dropdown.AddOptions(tmpOptions);
+            Debug.Log($"Added {tmpOptions.Count} options to {dropdown.name}");
+
+            // Set the dropdown's current value only if it's valid
+            if (tmpOptions.Count > 0)
+            {
+                int currentValue = dropdown.value;
+                if (currentValue < 0 || currentValue >= tmpOptions.Count)
+                {
+                    currentValue = 0; // Default to the first option if the current value is invalid
+                }
+
+                dropdown.value = currentValue;
+                dropdown.RefreshShownValue();
+
+                Debug.Log($"Dropdown {dropdown.name} value set to: {currentValue}");
+
+                // Update the caption image based on the current selection
+                if (dropdown.captionImage != null)
+                {
+                    TMP_Dropdown.OptionData selectedOption = tmpOptions[dropdown.value];
+                    dropdown.captionImage.sprite = selectedOption.image;
+                    dropdown.captionImage.enabled = selectedOption.image != null;
+
+                    if (selectedOption.image != null)
+                    {
+                        Debug.Log($"Caption image for {dropdown.name} updated to: {selectedOption.image.name}");
+                    }
+                    else
+                    {
+                        Debug.Log($"No image for selected option in {dropdown.name}, hiding caption image.");
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log($"No options available for {dropdown.name}");
+                dropdown.value = -1; // No valid options
+                dropdown.RefreshShownValue();
+            }
         }
     }
 }

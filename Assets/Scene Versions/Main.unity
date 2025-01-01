@@ -12845,7 +12845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1181038422
 Transform:
   m_ObjectHideFlags: 0
@@ -19327,6 +19327,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentChapter: 0
   totalChapters: 7
+  chapterDropdownOptions:
+  - Options:
+    - Text: wood
+      Icon: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
+  - Options:
+    - Text: iron
+      Icon: {fileID: 21300000, guid: 34754e88e281dd641879c1f0e6dd258e, type: 3}
+  - Options:
+    - Text: copper
+      Icon: {fileID: 21300000, guid: d29b987e3908db14c89dc8e4ba2ea362, type: 3}
+    - Text: silver
+      Icon: {fileID: 21300000, guid: c89cfd2ddefb1a6409d7cce42c5b6607, type: 3}
+  - Options:
+    - Text: emerald
+      Icon: {fileID: 21300000, guid: 7086b867dbcb8df48905d27eab45f38c, type: 3}
+    - Text: diamond
+      Icon: {fileID: 21300000, guid: dd02efcb474439e4293bfb9443f2ecd1, type: 3}
+  - Options:
+    - Text: platinum
+      Icon: {fileID: 21300000, guid: 5b08a458f55327d4eab90830ff07b04f, type: 3}
+    - Text: orichalcum
+      Icon: {fileID: 21300000, guid: dd150a6932ecfd04cb3786ac1d98962b, type: 3}
+  - Options:
+    - Text: amethyst
+      Icon: {fileID: 21300000, guid: 9e3414591574c0546b045cc67788b662, type: 3}
+    - Text: obsidian
+      Icon: {fileID: 21300000, guid: ebff343a2ab1a0a499c4a43541b5a35c, type: 3}
 --- !u!1 &1696464849
 GameObject:
   m_ObjectHideFlags: 0
