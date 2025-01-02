@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b04a21f454d084fa29dc51dbbae978, type: 3}
   m_Name: CarpenterMallet
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 02bada9a8c864464c9dfff8b0f44d2e7, type: 3}
+  image: {fileID: 21300000, guid: b4e00ccdab1e47343a06aad3c26b639b, type: 3}
   weaponName: Carpenter's Mallet
-  model3D: {fileID: 0}
+  modelPrefab: {fileID: 919132149155446097, guid: 3eb48bb1a75296a488f627c2fbeaf09e, type: 3}
   unlocked: 1
   materials:
-  - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
+  - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
     quantity: 2
     is_unlocked: 1

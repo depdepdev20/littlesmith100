@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b04a21f454d084fa29dc51dbbae978, type: 3}
   m_Name: RadiantVanguard
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 0c5ea2283be063247b81e7a37e8642d4, type: 3}
+  image: {fileID: 21300000, guid: a32137d828206214789f26a83ca52b60, type: 3}
   weaponName: Radiant Vanguard
-  model3D: {fileID: 0}
+  modelPrefab: {fileID: 919132149155446097, guid: cd21e96a525e036449270d8c9cd3b5fb, type: 3}
   unlocked: 0
   materials:
-  - image: {fileID: 21300000, guid: b7e83a641ff9e5c498b61db90add9327, type: 3}
+  - image: {fileID: 21300000, guid: 7086b867dbcb8df48905d27eab45f38c, type: 3}
     name: Emerald
     quantity: 6
     is_unlocked: 1
     unlockChapter: 3
-  - image: {fileID: 21300000, guid: 54b74023b009a5f44add98ccbe463911, type: 3}
+  - image: {fileID: 21300000, guid: dd02efcb474439e4293bfb9443f2ecd1, type: 3}
     name: Diamond
     quantity: 4
     is_unlocked: 1

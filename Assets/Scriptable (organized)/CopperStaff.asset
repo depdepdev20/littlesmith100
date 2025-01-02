@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b04a21f454d084fa29dc51dbbae978, type: 3}
   m_Name: CopperStaff
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: df780c59e74013c4fa27614aaa7e05b2, type: 3}
+  image: {fileID: 21300000, guid: 95aaee7278cf563458bc01679b123d55, type: 3}
   weaponName: Copper Healing Staff
-  model3D: {fileID: 0}
+  modelPrefab: {fileID: 919132149155446097, guid: 48fcf23ec71696c40985591016b0f200, type: 3}
   unlocked: 0
   materials:
-  - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
+  - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
     quantity: 3
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 21300000, guid: 869a1980b6002b44d9eab638f8b0bc77, type: 3}
+  - image: {fileID: 21300000, guid: d29b987e3908db14c89dc8e4ba2ea362, type: 3}
     name: Copper
     quantity: 3
     is_unlocked: 0
