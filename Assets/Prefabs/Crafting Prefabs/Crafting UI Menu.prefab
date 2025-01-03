@@ -443,6 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7743781097057671425}
+  - component: {fileID: 6301387247147827149}
   m_Layer: 5
   m_Name: Amethyst Spear (4)
   m_TagString: Untagged
@@ -470,6 +471,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6301387247147827149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368882819714631519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: d366a74c4dc6fdb478cd10acdc807246, type: 2}
+  UI: {fileID: 6136660409965348580}
 --- !u!1 &376265502312128412
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289710287826267415}
+  - component: {fileID: 5717396536999081393}
   m_Layer: 5
   m_Name: Carpenter's Mallett (2)
   m_TagString: Untagged
@@ -653,6 +669,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5717396536999081393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654010736765774868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: e7395faab20996543a095517fda05ec9, type: 2}
+  UI: {fileID: 6644461523116166803}
 --- !u!1 &669995745575714041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +1895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2292959631798778008}
+  - component: {fileID: 1045051756841657365}
   m_Layer: 5
   m_Name: Iron Dagger (4)
   m_TagString: Untagged
@@ -1892,6 +1923,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1045051756841657365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594366118959980008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 73f7deb990d6afb42bcf865101481eae, type: 2}
+  UI: {fileID: 7279366482174650410}
 --- !u!1 &1719851225939378645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,6 +2506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5856749217521228581}
+  - component: {fileID: 2714076587268625262}
   m_Layer: 5
   m_Name: Chaos Highlord (5)
   m_TagString: Untagged
@@ -2488,6 +2534,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2714076587268625262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279201928573975551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: ee1801047246c3246b38083b176bc28d, type: 2}
+  UI: {fileID: 2090463902068610827}
 --- !u!1 &2333789003355652561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,6 +2970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057137505165628700}
+  - component: {fileID: 3730841917019569794}
   m_Layer: 5
   m_Name: Silver Dagger (5)
   m_TagString: Untagged
@@ -2937,6 +2998,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3730841917019569794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470481145628333611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 007c59620d432f640bce55bfbae58d33, type: 2}
+  UI: {fileID: 2828885269822613927}
 --- !u!1 &2517533674782896283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +3021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573991649730466422}
+  - component: {fileID: 960131454831321257}
   m_Layer: 5
   m_Name: Wooden Hammer (1)
   m_TagString: Untagged
@@ -2973,6 +3049,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &960131454831321257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517533674782896283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: de7c24cb51d19be46953b6e6c041e5d3, type: 2}
+  UI: {fileID: 2694196294681741598}
 --- !u!1 &2584221851887102090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,6 +3863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2404059996543781847}
+  - component: {fileID: 6628332217397593691}
   m_Layer: 5
   m_Name: Silver Sword (2)
   m_TagString: Untagged
@@ -3800,6 +3891,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6628332217397593691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007926396383718569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 109e180bb5764a047bf32563cfa15acd, type: 2}
+  UI: {fileID: 4266435394771440136}
 --- !u!1 &3038754024880536516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,6 +3986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1644877637885214803}
+  - component: {fileID: 5071466424057972985}
   m_Layer: 5
   m_Name: Copper Healing Staff (1)
   m_TagString: Untagged
@@ -3908,6 +4014,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5071466424057972985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089333515570907894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 0bf5f8d25c0ac924e9593fb0f70251ff, type: 2}
+  UI: {fileID: 9190453986332295048}
 --- !u!1 &3109795225883959393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,6 +4251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428620499818340420}
+  - component: {fileID: 5949386161619751543}
   m_Layer: 5
   m_Name: Radiant Sword (3)
   m_TagString: Untagged
@@ -4158,6 +4279,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5949386161619751543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207237426882455253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 89efe252a38d9e54c9480f1e11147eaa, type: 2}
+  UI: {fileID: 7244365047008569834}
 --- !u!1 &3274060578009066951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2689190673776726128}
+  - component: {fileID: 6613224802192432113}
   m_Layer: 5
   m_Name: Aetherium Rune Spear (3)
   m_TagString: Untagged
@@ -4194,6 +4330,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6613224802192432113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274060578009066951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 251f04336925c5c40818340259a56cb8, type: 2}
+  UI: {fileID: 2889166379114911826}
 --- !u!1 &3317724796450536607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2572284833675109684}
+  - component: {fileID: 523849285400052564}
   m_Layer: 5
   m_Name: Aetherium Rune Staff (2)
   m_TagString: Untagged
@@ -4302,6 +4453,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &523849285400052564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378087678296000322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 693ef8e378f56374483a1de98e2a65a1, type: 2}
+  UI: {fileID: 6419368647374270129}
 --- !u!1 &3445350506883005400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,6 +6225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6828652238001579056}
+  - component: {fileID: 3329831824741051936}
   m_Layer: 5
   m_Name: Basic Pickaxe (3)
   m_TagString: Untagged
@@ -6087,6 +6253,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3329831824741051936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410071815819286978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: fe8e7c83fe9bd4f48890123e93d7debf, type: 2}
+  UI: {fileID: 8941452287920811506}
 --- !u!1 &4419363423503500073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,6 +6276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7803338198267359935}
+  - component: {fileID: 112267625858651655}
   m_Layer: 5
   m_Name: Amethyst Chaospiercer (3)
   m_TagString: Untagged
@@ -6123,6 +6304,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &112267625858651655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419363423503500073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c44859956a48be34d8af8bcb7a9594e8, type: 2}
+  UI: {fileID: 4748687729480005578}
 --- !u!1 &4435949590605970832
 GameObject:
   m_ObjectHideFlags: 0
@@ -7567,6 +7762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8165781786513908822}
+  - component: {fileID: 7328479134778301954}
   m_Layer: 5
   m_Name: Aetherium Rune Sword (4)
   m_TagString: Untagged
@@ -7594,6 +7790,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7328479134778301954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847771981673655795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: e992fc0a49d755041adc35b702319da4, type: 2}
+  UI: {fileID: 4342404788955901992}
 --- !u!1 &4997591085903078818
 GameObject:
   m_ObjectHideFlags: 0
@@ -10105,6 +10315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4701786964178727564}
+  - component: {fileID: 7004933763303642971}
   m_Layer: 5
   m_Name: Iron Sword (1)
   m_TagString: Untagged
@@ -10132,6 +10343,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7004933763303642971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559864219771485403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: dc5b83af52ac99849bf73ed784da5c34, type: 2}
+  UI: {fileID: 2376108607671034384}
 --- !u!1 &6560417190973523036
 GameObject:
   m_ObjectHideFlags: 0
@@ -11196,6 +11421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5406954157576679237}
+  - component: {fileID: 5790145828675637554}
   m_Layer: 5
   m_Name: Radiant Vanguard (2)
   m_TagString: Untagged
@@ -11223,6 +11449,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5790145828675637554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268371040440979855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: f40ca71a7220eb14ebaa140cf7f2ea91, type: 2}
+  UI: {fileID: 2333789003355652561}
 --- !u!1 &7270091630059707963
 GameObject:
   m_ObjectHideFlags: 0
@@ -12809,6 +13049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8032975630755311525}
+  - component: {fileID: 5185864460127289394}
   m_Layer: 5
   m_Name: Iron Spear (1)
   m_TagString: Untagged
@@ -12836,6 +13077,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5185864460127289394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367367100064352628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6fa6fdc059904448511f562686ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: cbeda71a81bc0de42a47639fe1c1f864, type: 2}
+  UI: {fileID: 1366357857972733944}
 --- !u!1 &8468481256247944088
 GameObject:
   m_ObjectHideFlags: 0

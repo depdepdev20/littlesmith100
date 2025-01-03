@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 19401008125bf8142aee2b9581b62d44, type: 3}
   weaponName: Chaos Highlord
   modelPrefab: {fileID: 919132149155446097, guid: 07fd5e0390cb8114f8dbce69af607da4, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: ca3ea1b1938613741a1f6895157b0e5a, type: 3}
     name: Amethyst

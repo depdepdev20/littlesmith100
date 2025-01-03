@@ -14,7 +14,8 @@ public class BlueprintSlotUI : MonoBehaviour
 
     private Blueprint blueprint; // Blueprint yang sedang ditampilkan
 
-    [SerializeField] private int currentChapter = 0; // Chapter saat ini
+    [SerializeField] private int currentChapter; // Chapter saat ini
+
     private bool isChapterUnlocked; // Status apakah chapter sudah terpenuhi
     private bool isPurchased = false; // Status apakah blueprint sudah dibeli
 
@@ -30,6 +31,11 @@ public class BlueprintSlotUI : MonoBehaviour
         {
             isChapterUnlocked = IsChapterUnlocked();
             UpdateUI();
+        }
+
+        if (ChapterManager.instance != null)
+        {
+            currentChapter = ChapterManager.instance.CurrentChapter;
         }
     }
 
@@ -62,7 +68,7 @@ public class BlueprintSlotUI : MonoBehaviour
             soldButton.gameObject.SetActive(false);
 
             // Tambahkan listener hanya jika tombol beli aktif
-            buyButton.onClick.RemoveAllListeners(); // Hapus listener sebelumnya
+            buyButton.onClick.RemoveAllListeners();
             buyButton.onClick.AddListener(OnBuyButtonClicked);
         }
         else
