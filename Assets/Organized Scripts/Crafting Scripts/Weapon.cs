@@ -36,5 +36,11 @@ public class Weapon : ScriptableObject
     public void UnlockWeapon() // diakses dari function blueprint
     {
         unlocked = true;
+
+        WeaponVisibilityController controller = FindObjectOfType<WeaponVisibilityController>();
+        if (controller != null)
+        {
+            controller.UpdateVisibility();
+        }
     }
 }

@@ -5,8 +5,29 @@ using UnityEngine.UI;
 
 public class ChapterManager : MonoBehaviour
 {
+    public static ChapterManager instance;
+
+
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private int totalChapters = 7;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public int CurrentChapter
+    {
+        get { return currentChapter; }
+    }
 
     private List<TMP_Dropdown> chapterDropdowns = new List<TMP_Dropdown>();
 

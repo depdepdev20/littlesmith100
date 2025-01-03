@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: fac1060f39a1dd64a9271591eb16d454, type: 3}
   weaponName: Wooden Hammer
   modelPrefab: {fileID: 919132149155446097, guid: 1a5f26b00848ede488bce4d8db81abb6, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
     name: Wood

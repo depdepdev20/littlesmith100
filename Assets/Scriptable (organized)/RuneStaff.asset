@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 1ce44b82115e1fe40a83634da364d8da, type: 3}
   weaponName: Aetherium Rune Staff
   modelPrefab: {fileID: 919132149155446097, guid: c3f9a84b6e3439a43a62bad4838547d7, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 5e7d400e3e8a17c45b007ec35a9cf4de, type: 3}
     name: Platinum
