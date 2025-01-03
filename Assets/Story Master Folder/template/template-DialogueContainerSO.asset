@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99a69ff5ed214494b835d86b8438ac53, type: 3}
-  m_Name: chapter 0 story
+  m_Name: template-DialogueContainerSO
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 348eae8e-cd72-4d51-877d-93d1e6e141bd
@@ -21,9 +21,9 @@ MonoBehaviour:
     BasePortName: Output
     TargetNodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
     TargetPortName: Input
-  - BaseNodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+  - BaseNodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
     BasePortName: Output
-    TargetNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    TargetNodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
     TargetPortName: Input
   - BaseNodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
     BasePortName: Output
@@ -33,7 +33,11 @@ MonoBehaviour:
     BasePortName: Output
     TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
     TargetPortName: Input
-  - BaseNodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
+  - BaseNodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+    BasePortName: Output
+    TargetNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    TargetPortName: Input
+  - BaseNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
     BasePortName: Output
     TargetNodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
     TargetPortName: Input
@@ -73,14 +77,6 @@ MonoBehaviour:
     BasePortName: Continue
     TargetNodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
     TargetPortName: Input
-  - BaseNodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
-    BasePortName: Continue
-    TargetNodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
-    TargetPortName: Input
-  - BaseNodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
-    BasePortName: Continue
-    TargetNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
-    TargetPortName: Input
   - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
     BasePortName: d7d4887f-a48e-4fa2-a9ca-698674802f3f
     TargetNodeGuid: 0d97e2a0-d28f-4b66-93f6-f5ebf29720ad
@@ -104,6 +100,10 @@ MonoBehaviour:
   - BaseNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
     BasePortName: ebe3aad5-27e5-4b54-af0e-3ffbbeb5a747
     TargetNodeGuid: 985560e3-1e02-4acd-9740-c26a89534ac6
+    TargetPortName: Input
+  - BaseNodeGuid: dd912240-a57a-4ad6-93a2-91cb210255d5
+    BasePortName: Continue
+    TargetNodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
     TargetPortName: Input
   - BaseNodeGuid: d48ec8bf-f192-4342-931c-871a5eebb02b
     BasePortName: Continue
@@ -117,13 +117,13 @@ MonoBehaviour:
     BasePortName: Continue
     TargetNodeGuid: 9773c471-ed62-4c1c-88e6-f8ea9abae5a5
     TargetPortName: Input
-  - BaseNodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
-    BasePortName: Output
-    TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
-    TargetPortName: Input
-  - BaseNodeGuid: dd912240-a57a-4ad6-93a2-91cb210255d5
+  - BaseNodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
     BasePortName: Continue
-    TargetNodeGuid: 4a52216d-b723-4caf-a8c7-a9a46bbaf876
+    TargetNodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
+    TargetPortName: Input
+  - BaseNodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    BasePortName: Continue
+    TargetNodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
     TargetPortName: Input
   EndDatas:
   - NodeGuid: ee6f9333-b1ba-47f4-be90-3c6853ce325c
@@ -138,54 +138,6 @@ MonoBehaviour:
   - NodeGuid: 348eae8e-cd72-4d51-877d-93d1e6e141bd
     Position: {x: -852.6667, y: 308}
   EventDatas:
-  - NodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
-    Position: {x: 2006.6666, y: 807.3334}
-    EventData_StringModifiers: []
-    EventData_FloatModifiers: []
-    EventData_IntModifiers:
-    - VariableSO: {fileID: 11400000, guid: 2e148dc33100e6b48ad9dece99bdd6ec, type: 2}
-      Value:
-        Value: 350
-      EventType:
-        Value: 4
-    EventData_BoolModifiers: []
-    Container_DialogueEventSOs: []
-  - NodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
-    Position: {x: 2271.3333, y: 966}
-    EventData_StringModifiers: []
-    EventData_FloatModifiers: []
-    EventData_IntModifiers:
-    - VariableSO: {fileID: 11400000, guid: 20fa5770fd22b344f8225a698884df26, type: 2}
-      Value:
-        Value: 1
-      EventType:
-        Value: 3
-    EventData_BoolModifiers: []
-    Container_DialogueEventSOs: []
-  - NodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
-    Position: {x: 2014.6666, y: -626.6666}
-    EventData_StringModifiers: []
-    EventData_FloatModifiers: []
-    EventData_IntModifiers:
-    - VariableSO: {fileID: 11400000, guid: 2e148dc33100e6b48ad9dece99bdd6ec, type: 2}
-      Value:
-        Value: 700
-      EventType:
-        Value: 3
-    EventData_BoolModifiers: []
-    Container_DialogueEventSOs: []
-  - NodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
-    Position: {x: 2851.3333, y: -155.33333}
-    EventData_StringModifiers: []
-    EventData_FloatModifiers: []
-    EventData_IntModifiers: []
-    EventData_BoolModifiers:
-    - VariableSO: {fileID: 11400000, guid: 1e8d881f92fd70a4bb1f1b15f51b2a7b, type: 2}
-      Value:
-        Value: 0
-      EventType:
-        Value: 1
-    Container_DialogueEventSOs: []
   - NodeGuid: 8cb99b2b-6cba-4522-946f-e8f21c881212
     Position: {x: 2056, y: -206}
     EventData_StringModifiers: []
@@ -198,6 +150,54 @@ MonoBehaviour:
         Value: 4
     EventData_BoolModifiers: []
     Container_DialogueEventSOs: []
+  - NodeGuid: 7b5e9015-b30c-4a1b-a81d-71c5da72d067
+    Position: {x: 2014.6666, y: -626.6666}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 8378f48ddcd88764da56594ca7203d1d, type: 2}
+      Value:
+        Value: 1000
+      EventType:
+        Value: 3
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  - NodeGuid: d7eb2d85-dc8b-4943-ab29-62bcaf7d6df9
+    Position: {x: 2851.3333, y: -155.33333}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers: []
+    EventData_BoolModifiers:
+    - VariableSO: {fileID: 11400000, guid: 3dd76d765f65aaf468b13b2eac540dda, type: 2}
+      Value:
+        Value: 0
+      EventType:
+        Value: 1
+    Container_DialogueEventSOs: []
+  - NodeGuid: 8fd15721-72f4-4aad-ad1a-09af51b0b637
+    Position: {x: 2007.3334, y: 807.3334}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 8378f48ddcd88764da56594ca7203d1d, type: 2}
+      Value:
+        Value: 500
+      EventType:
+        Value: 4
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
+  - NodeGuid: 0c4421fc-200e-4414-ae30-3c937212f580
+    Position: {x: 2271.3333, y: 966}
+    EventData_StringModifiers: []
+    EventData_FloatModifiers: []
+    EventData_IntModifiers:
+    - VariableSO: {fileID: 11400000, guid: 77efc762583506442a80e71b3ad01294, type: 2}
+      Value:
+        Value: 1
+      EventType:
+        Value: 3
+    EventData_BoolModifiers: []
+    Container_DialogueEventSOs: []
   BranchDatas:
   - NodeGuid: 24ee1e21-b7b8-479e-8c23-e007e52d075c
     Position: {x: -622.6667, y: 282}
@@ -207,7 +207,7 @@ MonoBehaviour:
     EventData_FloatConditions: []
     EventData_IntConditions: []
     EventData_BoolConditions:
-    - VariableSO: {fileID: 11400000, guid: 1e8d881f92fd70a4bb1f1b15f51b2a7b, type: 2}
+    - VariableSO: {fileID: 11400000, guid: 3dd76d765f65aaf468b13b2eac540dda, type: 2}
       Value:
         Value: 0
       EventType:
@@ -220,11 +220,11 @@ MonoBehaviour:
     EventData_FloatConditions: []
     EventData_IntConditions: []
     EventData_BoolConditions:
-    - VariableSO: {fileID: 11400000, guid: 35c708f807124194fae3ef26bda564d8, type: 2}
+    - VariableSO: {fileID: 11400000, guid: 1d8221bede3a15e4cbf9be230a6ef01c, type: 2}
       Value:
         Value: 0
       EventType:
-        Value: 0
+        Value: 1
   DialogueDatas:
   - NodeGuid: 8d7d41b9-2766-4a7d-abc2-7e7762e79d36
     Position: {x: 448, y: -732.6666}
@@ -232,7 +232,7 @@ MonoBehaviour:
     - ID:
         Value: 1
       CharacterName:
-        Value: The Messenger
+        Value: The Knight
     DialogueData_Texts:
     - ID:
         Value: 2
@@ -276,147 +276,13 @@ MonoBehaviour:
       Sprite_Right:
         Value: {fileID: 0}
     DialogueData_Ports: []
-  - NodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
-    Position: {x: 560.6667, y: -187.33333}
-    DialogueData_Names:
-    - ID:
-        Value: 1
-      CharacterName:
-        Value: The Messenger
-    DialogueData_Texts:
-    - ID:
-        Value: 2
-      GuidID:
-        Value: c90f6de7-4d1d-4e20-9303-722dabbb4e28
-      Text:
-      - LanguageType: 1
-        LanguageGenericType: if its not a problem, please hurry up
-      - LanguageType: 2
-        LanguageGenericType: 
-      - LanguageType: 3
-        LanguageGenericType: 
-      - LanguageType: 4
-        LanguageGenericType: 
-      - LanguageType: 5
-        LanguageGenericType: 
-      - LanguageType: 6
-        LanguageGenericType: 
-      - LanguageType: 7
-        LanguageGenericType: 
-      AudioClips:
-      - LanguageType: 1
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 2
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 3
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 4
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 5
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 6
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 7
-        LanguageGenericType: {fileID: 0}
-    - ID:
-        Value: 3
-      GuidID:
-        Value: c74eb79a-2705-4abe-a346-1e629ba30686
-      Text:
-      - LanguageType: 1
-        LanguageGenericType: i dont know how long they will last without proper weapons....
-      - LanguageType: 2
-        LanguageGenericType: 
-      - LanguageType: 3
-        LanguageGenericType: 
-      - LanguageType: 4
-        LanguageGenericType: 
-      - LanguageType: 5
-        LanguageGenericType: 
-      - LanguageType: 6
-        LanguageGenericType: 
-      - LanguageType: 7
-        LanguageGenericType: 
-      AudioClips:
-      - LanguageType: 1
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 2
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 3
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 4
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 5
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 6
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 7
-        LanguageGenericType: {fileID: 0}
-    DialogueData_Imagess:
-    - ID:
-        Value: 0
-      Sprite_Left:
-        Value: {fileID: 0}
-      Sprite_Right:
-        Value: {fileID: 0}
-    DialogueData_Ports: []
-  - NodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
-    Position: {x: -20, y: 374}
-    DialogueData_Names:
-    - ID:
-        Value: 1
-      CharacterName:
-        Value: The Messenger
-    DialogueData_Texts:
-    - ID:
-        Value: 2
-      GuidID:
-        Value: 672ac643-3310-4f76-9182-e730b1e9669a
-      Text:
-      - LanguageType: 1
-        LanguageGenericType: tells the story and situation.....
-      - LanguageType: 2
-        LanguageGenericType: 
-      - LanguageType: 3
-        LanguageGenericType: 
-      - LanguageType: 4
-        LanguageGenericType: 
-      - LanguageType: 5
-        LanguageGenericType: 
-      - LanguageType: 6
-        LanguageGenericType: 
-      - LanguageType: 7
-        LanguageGenericType: 
-      AudioClips:
-      - LanguageType: 1
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 2
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 3
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 4
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 5
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 6
-        LanguageGenericType: {fileID: 0}
-      - LanguageType: 7
-        LanguageGenericType: {fileID: 0}
-    DialogueData_Imagess:
-    - ID:
-        Value: 0
-      Sprite_Left:
-        Value: {fileID: 0}
-      Sprite_Right:
-        Value: {fileID: 0}
-    DialogueData_Ports: []
   - NodeGuid: b02411ed-29f8-4b8a-862b-12176fb6db81
     Position: {x: 415.33334, y: 354.66666}
     DialogueData_Names:
     - ID:
         Value: 1
       CharacterName:
-        Value: you
+        Value: Little Smith
     DialogueData_Texts:
     - ID:
         Value: 2
@@ -475,7 +341,7 @@ MonoBehaviour:
     - ID:
         Value: 1
       CharacterName:
-        Value: The Messenger
+        Value: The Knight
     DialogueData_Texts:
     - ID:
         Value: 2
@@ -655,7 +521,7 @@ MonoBehaviour:
     - ID:
         Value: 1
       CharacterName:
-        Value: you
+        Value: Litlle Smith
     DialogueData_Texts:
     - ID:
         Value: 2
@@ -696,6 +562,140 @@ MonoBehaviour:
         Value: 0
       Sprite_Left:
         Value: {fileID: 21300000, guid: 54246793264b0784b8502e8629e06f33, type: 3}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: ccbf5d7d-b8ed-4d43-a54d-bb1ec72337a0
+    Position: {x: 554.6667, y: -192.66666}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Knight
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: c90f6de7-4d1d-4e20-9303-722dabbb4e28
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: if its not a problem, please hurry up
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    - ID:
+        Value: 3
+      GuidID:
+        Value: c74eb79a-2705-4abe-a346-1e629ba30686
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: i dont know how long they will last without proper weapons....
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  - NodeGuid: d145a2c4-2840-415d-baae-9b65c1f2da9e
+    Position: {x: -20, y: 374}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Knight
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: 672ac643-3310-4f76-9182-e730b1e9669a
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: tells the story and situation.....
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
       Sprite_Right:
         Value: {fileID: 0}
     DialogueData_Ports: []

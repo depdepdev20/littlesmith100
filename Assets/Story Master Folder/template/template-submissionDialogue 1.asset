@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a69ff5ed214494b835d86b8438ac53, type: 3}
+  m_Name: template-submissionDialogue 1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 14c1aaca-e411-43f5-85a9-2323e3c98708
+    BasePortName: Output
+    TargetNodeGuid: d1cb9e5f-56f7-49e9-a42d-a5d3e1dc19ca
+    TargetPortName: Input
+  - BaseNodeGuid: d1cb9e5f-56f7-49e9-a42d-a5d3e1dc19ca
+    BasePortName: Continue
+    TargetNodeGuid: 006331ab-bdde-4f18-ae06-e00be0b9ccc8
+    TargetPortName: Input
+  EndDatas:
+  - NodeGuid: 006331ab-bdde-4f18-ae06-e00be0b9ccc8
+    Position: {x: 621.3333, y: 80}
+    EndNodeType:
+      Value: 1
+  StartDatas:
+  - NodeGuid: 14c1aaca-e411-43f5-85a9-2323e3c98708
+    Position: {x: 164, y: 89.33333}
+  EventDatas: []
+  BranchDatas: []
+  DialogueDatas:
+  - NodeGuid: d1cb9e5f-56f7-49e9-a42d-a5d3e1dc19ca
+    Position: {x: 318, y: 80}
+    DialogueData_Names:
+    - ID:
+        Value: 1
+      CharacterName:
+        Value: The Knight
+    DialogueData_Texts:
+    - ID:
+        Value: 2
+      GuidID:
+        Value: b3d09251-23fc-4102-a7a9-744d1147d4d6
+      Text:
+      - LanguageType: 1
+        LanguageGenericType: Thank you, just what we needed
+      - LanguageType: 2
+        LanguageGenericType: 
+      - LanguageType: 3
+        LanguageGenericType: 
+      - LanguageType: 4
+        LanguageGenericType: 
+      - LanguageType: 5
+        LanguageGenericType: 
+      - LanguageType: 6
+        LanguageGenericType: 
+      - LanguageType: 7
+        LanguageGenericType: 
+      AudioClips:
+      - LanguageType: 1
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 2
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 3
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 4
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 5
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 6
+        LanguageGenericType: {fileID: 0}
+      - LanguageType: 7
+        LanguageGenericType: {fileID: 0}
+    DialogueData_Imagess:
+    - ID:
+        Value: 0
+      Sprite_Left:
+        Value: {fileID: 0}
+      Sprite_Right:
+        Value: {fileID: 0}
+    DialogueData_Ports: []
+  ChoiceDatas: []

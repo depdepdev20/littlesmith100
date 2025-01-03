@@ -1,45 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using KasperDev.ModularComponents;
 
 namespace KasperDev.Dialogue.Example.Ex01
 {
     public class DialogueTalkZone : MonoBehaviour
     {
-        [SerializeField] private GameObject speechBubble;
-        [SerializeField] private KeyCode talkKey = KeyCode.E;
-        [SerializeField] private TextMeshProUGUI keyInputText;
-
-        private DialogueTalk dialogueTalk;
+        [SerializeField] private DialogueTalk dialogueTalk;
+        [SerializeField] private BoolVariableSO isPackageNearbySO;
+        [SerializeField] private BoolVariableSO canStartDialogueSO; // New BoolVariableSO to control dialogue activation
+        [SerializeField] private bool isPlayerNearby = false;
 
         private void Awake()
         {
-            speechBubble.SetActive(false);
-            dialogueTalk = GetComponent<DialogueTalk>();
+            if (dialogueTalk == null)
+            {
+                dialogueTalk = GetComponent<DialogueTalk>();
+            }
         }
 
-        void Update()
+        private void Update()
         {
-            if (Input.GetKeyDown(talkKey) && speechBubble.activeSelf)
+
+            if (Input.GetKeyDown(KeyCode.E) &&
+                dialogueTalk != null &&
+                !isPackageNearbySO.Value &&
+                isPlayerNearby &&
+                canStartDialogueSO.Value) // Ensure dialogue can be started
             {
                 dialogueTalk.StartDialogue();
             }
+           
+     
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Package"))
             {
-                speechBubble.SetActive(true);
+                isPackageNearbySO.SetValue(true);
+            }
+            else if (other.CompareTag("Player"))
+            {
+                isPlayerNearby = true;
+                canStartDialogueSO.SetValue(true);
+
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Package"))
             {
-                speechBubble.SetActive(false);
+                isPackageNearbySO.SetValue(false);
+            }
+            else if (other.CompareTag("Player"))
+            {
+                isPlayerNearby = false;
             }
         }
     }
