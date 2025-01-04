@@ -20,6 +20,8 @@ public class TimeManager : MonoBehaviour
     public Transform moonTransform;
     private Light moonLight;
 
+
+
     [SerializeField] private BoolVariableSO rollthegoodending; // ScriptableObject for good ending
     [SerializeField] private BoolVariableSO gotgameover; // ScriptableObject for game over
 
@@ -67,6 +69,7 @@ public class TimeManager : MonoBehaviour
 
     public GameTimeStamp GetTimestamp()
     {
+
         return timestamp;
     }
 

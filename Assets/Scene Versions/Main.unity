@@ -8643,11 +8643,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752219664}
   m_CullTransparentMesh: 1
---- !u!1 &753456209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 710318539336769210, guid: ddca7cc6b20a0da48a893e96872f5363, type: 3}
-  m_PrefabInstance: {fileID: 267530390}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &753456216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4045039288545963123, guid: ddca7cc6b20a0da48a893e96872f5363, type: 3}
@@ -16092,7 +16087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef6a18a611b38f4e94d042f78231fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 753456209}
+  npcPrefabs: []
   spawnPoint: {fileID: 1450342936}
   maxNpcCount: 5
   destinations:
@@ -16117,8 +16112,9 @@ MonoBehaviour:
   - {fileID: 876841279}
   - {fileID: 437724064}
   - {fileID: 476734512}
-  spawnStartHour: 20
-  spawnEndHour: 10
+  isHardMode: 0
+  easyOpenTimes: 08000000080000000800000008000000080000000900000009000000
+  easyCloseTimes: 11000000110000001100000011000000110000000f0000000f000000
 --- !u!4 &1450342936
 Transform:
   m_ObjectHideFlags: 0
