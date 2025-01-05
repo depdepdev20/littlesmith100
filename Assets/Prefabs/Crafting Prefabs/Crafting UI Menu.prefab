@@ -1154,7 +1154,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158605909169989698}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: fcd6293bbe9562f49a7cef9f90ad2461, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6d0936ca1f1ad6640b14460301d6fc59, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1897,7 +1897,7 @@ GameObject:
   - component: {fileID: 2292959631798778008}
   - component: {fileID: 1045051756841657365}
   m_Layer: 5
-  m_Name: Iron Dagger (4)
+  m_Name: Iron Dagger (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,7 +1916,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7056727607624013059}
-  m_Father: {fileID: 5540002616662801094}
+  m_Father: {fileID: 8425857095341060250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2508,7 +2508,7 @@ GameObject:
   - component: {fileID: 5856749217521228581}
   - component: {fileID: 2714076587268625262}
   m_Layer: 5
-  m_Name: Chaos Highlord (5)
+  m_Name: Chaos Highlord (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2856,8 +2856,6 @@ RectTransform:
   - {fileID: 5573991649730466422}
   - {fileID: 289710287826267415}
   - {fileID: 6828652238001579056}
-  - {fileID: 2292959631798778008}
-  - {fileID: 1057137505165628700}
   m_Father: {fileID: 4804757370910043140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -2972,7 +2970,7 @@ GameObject:
   - component: {fileID: 1057137505165628700}
   - component: {fileID: 3730841917019569794}
   m_Layer: 5
-  m_Name: Silver Dagger (5)
+  m_Name: Silver Dagger (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2991,7 +2989,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7044684305726184732}
-  m_Father: {fileID: 5540002616662801094}
+  m_Father: {fileID: 8425857095341060250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3401,7 +3399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Spears & Shield(3)
+  m_text: Spears & Shield (4)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c45d56c0b6e9534cab780b8359bb27d, type: 2}
   m_sharedMaterial: {fileID: -9185813557052205083, guid: 4c45d56c0b6e9534cab780b8359bb27d, type: 2}
@@ -5016,6 +5014,8 @@ RectTransform:
   - {fileID: 2404059996543781847}
   - {fileID: 428620499818340420}
   - {fileID: 8165781786513908822}
+  - {fileID: 2292959631798778008}
+  - {fileID: 1057137505165628700}
   - {fileID: 5856749217521228581}
   m_Father: {fileID: 4809247465275299544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7176,7 +7176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Magical & Ranged (4)
+  m_text: Magical & Ranged (3)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c45d56c0b6e9534cab780b8359bb27d, type: 2}
   m_sharedMaterial: {fileID: -9185813557052205083, guid: 4c45d56c0b6e9534cab780b8359bb27d, type: 2}
@@ -7423,10 +7423,10 @@ RectTransform:
   - {fileID: 8462369150179873628}
   m_Father: {fileID: 5952495279236890986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.74348027, y: 0.5}
-  m_AnchorMax: {x: 0.74348027, y: 0.5}
-  m_AnchoredPosition: {x: -153.00302, y: 0.000015258789}
-  m_SizeDelta: {x: 628.4, y: 704.71}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 38.762238}
+  m_SizeDelta: {x: -332.1705, y: -372.2455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7779182025404420194
 CanvasRenderer:
@@ -9339,7 +9339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: -136}
+  m_AnchoredPosition: {x: 99.99999, y: -152.47002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2508168771268315348
@@ -13207,7 +13207,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8488104784134571535}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: fcd6293bbe9562f49a7cef9f90ad2461, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6d0936ca1f1ad6640b14460301d6fc59, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

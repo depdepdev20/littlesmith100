@@ -15,17 +15,17 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 1ce44b82115e1fe40a83634da364d8da, type: 3}
   weaponName: Aetherium Rune Staff
   modelPrefab: {fileID: 919132149155446097, guid: c3f9a84b6e3439a43a62bad4838547d7, type: 3}
-  unlocked: 0
+  unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 5b08a458f55327d4eab90830ff07b04f, type: 3}
     name: Platinum
     quantity: 3
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 4
   - image: {fileID: 21300000, guid: dd150a6932ecfd04cb3786ac1d98962b, type: 3}
-    name: Orichalchum
+    name: Orichalcum
     quantity: 3
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 4
   sellPrice: 220
   whenToUnlock: 4

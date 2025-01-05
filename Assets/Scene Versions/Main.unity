@@ -23095,7 +23095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef0c4da9a9686f4dbe226da1c230048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 10
   runSpeed: 10
   rotaSpeed: 5
   triggerObject: {fileID: 0}

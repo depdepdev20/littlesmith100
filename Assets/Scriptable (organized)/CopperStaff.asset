@@ -25,7 +25,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: d29b987e3908db14c89dc8e4ba2ea362, type: 3}
     name: Copper
     quantity: 3
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 2
   sellPrice: 12
   whenToUnlock: 2

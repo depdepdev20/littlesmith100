@@ -47,15 +47,14 @@ public class CraftingProcessHandler : MonoBehaviour
         // Simulate crafting time
         yield return new WaitForSeconds(2f);
 
-        // Instantiate the crafted package
-        InstantiatePackage(quantity, weapon);
-
-        yield return new WaitForSeconds(2f);
-
         isProcessing = false;
 
         // Notify listeners that crafting is complete
         OnCraftingCompleted?.Invoke();
+
+        yield return new WaitForSeconds(2f);
+        // Instantiate the crafted package
+        InstantiatePackage(quantity, weapon); //munculin package stlh ui ditutup
     }
 
     /// <summary>
