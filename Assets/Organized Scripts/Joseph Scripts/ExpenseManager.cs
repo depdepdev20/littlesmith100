@@ -43,7 +43,7 @@ public class ExpenseManager : MonoBehaviour
         {
             int totalDays = TimeManager.Instance.GetTotalDays();
 
-            if (totalDays % expenseIntervalDays == 0 && totalDays != lastDeductionDay)
+            if (totalDays > 0 && totalDays % expenseIntervalDays == 0 && totalDays != lastDeductionDay)
             {
                 lastDeductionDay = totalDays;
                 DeductExpenses();
@@ -52,6 +52,7 @@ public class ExpenseManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+
 
     private void DeductExpenses()
     {
