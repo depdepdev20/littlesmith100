@@ -27,6 +27,10 @@ public class ExpenseManager : MonoBehaviour
     [SerializeField] private TMP_Text expenseMessage; // Text to display expense message
     [SerializeField] private float notificationDuration = 2f; // Duration to show the notification
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip notificationSound; // Sound clip for notification
+    private AudioSource audioSource;
+
     [System.Serializable]
     public class ChapterMultipliers
     {
@@ -46,6 +50,13 @@ public class ExpenseManager : MonoBehaviour
         else
         {
             Debug.LogError("Expense Notification Panel is not assigned!");
+        }
+
+        // Initialize AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
 
         StartCoroutine(DeductExpensesRoutine());
@@ -88,7 +99,7 @@ public class ExpenseManager : MonoBehaviour
         if (success)
         {
             Debug.Log($"Successfully deducted {totalExpenses} coins.");
-            ShowExpenseNotification($"-{totalExpenses} Coin Expense");
+            ShowExpenseNotification($"Expenses: -{totalExpenses}");
         }
         else
         {
@@ -132,6 +143,17 @@ public class ExpenseManager : MonoBehaviour
         if (expenseNotificationPanel != null && expenseMessage != null)
         {
             expenseMessage.text = message;
+
+            // Play notification sound
+            if (audioSource != null && notificationSound != null)
+            {
+                audioSource.PlayOneShot(notificationSound);
+            }
+            else
+            {
+                Debug.LogWarning("Notification sound or AudioSource is missing.");
+            }
+
             expenseNotificationPanel.SetActive(true);
             StartCoroutine(HideExpenseNotification());
         }

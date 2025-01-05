@@ -16330,6 +16330,7 @@ MonoBehaviour:
   expenseNotificationPanel: {fileID: 2088155359}
   expenseMessage: {fileID: 519454702}
   notificationDuration: 2
+  notificationSound: {fileID: 8300000, guid: 15f51e6736746c843bda61d2d5e3fa1b, type: 3}
 --- !u!1 &1413570024
 GameObject:
   m_ObjectHideFlags: 0
