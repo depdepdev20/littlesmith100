@@ -17,7 +17,7 @@ MonoBehaviour:
   modelPrefab: {fileID: 919132149155446097, guid: ea7a7abc521308142841492e286a76dc, type: 3}
   unlocked: 0
   materials:
-  - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
+  - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
     quantity: 3
     is_unlocked: 1

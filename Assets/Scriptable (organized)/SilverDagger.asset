@@ -17,12 +17,12 @@ MonoBehaviour:
   modelPrefab: {fileID: 919132149155446097, guid: 20d35d809db1423439562531d9e3919c, type: 3}
   unlocked: 0
   materials:
-  - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
+  - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
     quantity: 1
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 21300000, guid: 6696923af74f6b14b9fd1f9841d5261b, type: 3}
+  - image: {fileID: 21300000, guid: c89cfd2ddefb1a6409d7cce42c5b6607, type: 3}
     name: Silver
     quantity: 2
     is_unlocked: 0

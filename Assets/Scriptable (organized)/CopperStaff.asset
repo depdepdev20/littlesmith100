@@ -17,12 +17,12 @@ MonoBehaviour:
   modelPrefab: {fileID: 919132149155446097, guid: 842dc7cb6c463044fad82a8ab1ea8416, type: 3}
   unlocked: 0
   materials:
-  - image: {fileID: 21300000, guid: 1ce7f0a43c70f2241a34ff72395d06a0, type: 3}
+  - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
     quantity: 3
     is_unlocked: 1
     unlockChapter: 0
-  - image: {fileID: 21300000, guid: 869a1980b6002b44d9eab638f8b0bc77, type: 3}
+  - image: {fileID: 21300000, guid: d29b987e3908db14c89dc8e4ba2ea362, type: 3}
     name: Copper
     quantity: 3
     is_unlocked: 0
