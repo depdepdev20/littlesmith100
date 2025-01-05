@@ -62,6 +62,31 @@ public class ChapterManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Sets the current chapter to the specified value.
+    /// </summary>
+    /// <param name="chapter">The chapter to set.</param>
+    public void SetCurrentChapter(int chapter)
+    {
+        if (chapter < 1)
+        {
+            Debug.LogWarning("Chapter cannot be less than 1. Setting to 1.");
+            currentChapter = 1;
+        }
+        else if (chapter > totalChapters)
+        {
+            Debug.LogWarning($"Chapter cannot be greater than {totalChapters}. Setting to {totalChapters}.");
+            currentChapter = totalChapters;
+        }
+        else
+        {
+            currentChapter = chapter;
+        }
+
+        Debug.Log($"Chapter set to {currentChapter}");
+        UpdateDropdownOptions(currentChapter);
+    }
+
     public void UnlockNextChapter()
     {
         if (currentChapter < totalChapters)

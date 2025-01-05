@@ -133,6 +133,13 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public void SetTotalDays(int days)
+    {
+        totalDays = days;
+        UpdateInspectorDisplays();
+    }
+
+
     private void UpdateSunAndMoon()
     {
         float sunAngle = (timestamp.hour + (timestamp.minute / 60.0f)) * 15f - 90f;
@@ -177,7 +184,7 @@ public class TimeManager : MonoBehaviour
         currentDayDisplay = $"Day {totalDays}, Day {timestamp.day}";
         currentTimeDisplay = $"Time: {timestamp.hour:D2}:{timestamp.minute:D2}:{timestamp.second:D2}";
 
-        Debug.Log($"Inspector Updated - {currentDayDisplay}, {currentTimeDisplay}");
+        // Debug.Log($"Inspector Updated - {currentDayDisplay}, {currentTimeDisplay}");
     }
 
 

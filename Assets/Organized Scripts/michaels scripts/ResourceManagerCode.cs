@@ -9,16 +9,16 @@ public class ResourceManagerCode : MonoBehaviour
 
     // Resource values
     private int coins = 10000;
-    private int wood = 100;
-    private int iron = 200;
-    private int silver = 300; // New material
-    private int copper = 400; // New material
-    private int emerald = 500;
-    private int diamond = 600;
-    private int platinum = 700;
-    private int orichalcum = 800;
-    private int amethyst = 900;
-    private int obsidian = 1000;
+    private int wood = 222;
+    private int iron = 222;
+    private int silver = 222; // New material
+    private int copper = 222; // New material
+    private int emerald = 222;
+    private int diamond = 222;
+    private int platinum = 222;
+    private int orichalcum = 222;
+    private int amethyst = 222;
+    private int obsidian = 222;
     public event Action OnResourcesUpdated;
 
     private void Awake()
@@ -197,6 +197,49 @@ public class ResourceManagerCode : MonoBehaviour
                 return 0;
         }
     }
+    public void SetResourceValue(string resourceType, int value)
+    {
+        switch (resourceType.ToLower())
+        {
+            case "coin":
+                coins = value;
+                break;
+            case "iron":
+                iron = value;
+                break;
+            case "diamond":
+                diamond = value;
+                break;
+            case "wood":
+                wood = value;
+                break;
+            case "orichalcum":
+                orichalcum = value;
+                break;
+            case "platinum":
+                platinum = value;
+                break;
+            case "emerald":
+                emerald = value;
+                break;
+            case "amethyst":
+                amethyst = value;
+                break;
+            case "obsidian":
+                obsidian = value;
+                break;
+            case "silver":
+                silver = value;
+                break;
+            case "copper":
+                copper = value;
+                break;
+            default:
+                Debug.LogWarning("Resource tidak ada");
+                break;
+        }
+    }
+
 
     /// <summary>
     /// Deduct multiple materials from the resource pool.
