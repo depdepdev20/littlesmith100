@@ -8,7 +8,7 @@ public class ResourceManagerCode : MonoBehaviour
     public static ResourceManagerCode instance;
 
     // Resource values
-    private int coins = 0;
+    private int coins = 10000;
     private int wood = 100;
     private int iron = 200;
     private int silver = 300; // New material

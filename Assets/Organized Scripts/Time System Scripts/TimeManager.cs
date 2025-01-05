@@ -11,7 +11,11 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameTimeStamp timestamp = new GameTimeStamp(1, GameTimeStamp.Season.Spring, 23, 58, 0);
     [Tooltip("Set the current total days from the Inspector.")]
     [SerializeField] private int totalDays = 0;
-    public float timeScale = -1.0f;
+    [SerializeField] private float timeScale = -1.0f;
+
+    [Header("Debug Information")]
+    [SerializeField] private string currentDayDisplay; // Human-readable day display
+    [SerializeField] private string currentTimeDisplay; // Human-readable time display
 
     [Header("Day and Night Cycle")]
     public Transform sunTransform;
@@ -19,8 +23,6 @@ public class TimeManager : MonoBehaviour
 
     public Transform moonTransform;
     private Light moonLight;
-
-
 
     [SerializeField] private BoolVariableSO rollthegoodending; // ScriptableObject for good ending
     [SerializeField] private BoolVariableSO gotgameover; // ScriptableObject for game over
@@ -55,6 +57,7 @@ public class TimeManager : MonoBehaviour
         // Trigger an initial check in case `totalDays` was set via the Inspector
         CheckGameEnding();
 
+        UpdateInspectorDisplays(); // Update displays at the start
         StartCoroutine(TimeUpdate());
     }
 
@@ -69,7 +72,6 @@ public class TimeManager : MonoBehaviour
 
     public GameTimeStamp GetTimestamp()
     {
-
         return timestamp;
     }
 
@@ -90,6 +92,7 @@ public class TimeManager : MonoBehaviour
 
         UpdateSunAndMoon();
         AdjustLighting();
+        UpdateInspectorDisplays(); // Update Inspector displays on each tick
     }
 
     public float GetSecondsPerHour()
@@ -167,4 +170,15 @@ public class TimeManager : MonoBehaviour
     {
         CheckGameEnding();
     }
+
+    private void UpdateInspectorDisplays()
+    {
+        // Updates the day and time debug info in the Inspector
+        currentDayDisplay = $"Day {totalDays}, Day {timestamp.day}";
+        currentTimeDisplay = $"Time: {timestamp.hour:D2}:{timestamp.minute:D2}:{timestamp.second:D2}";
+
+        Debug.Log($"Inspector Updated - {currentDayDisplay}, {currentTimeDisplay}");
+    }
+
+
 }
