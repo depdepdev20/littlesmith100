@@ -14,21 +14,33 @@ public class PlayerPickUpDrop : MonoBehaviour
 
     private ObjectGrabbable objectGrabbable;
 
-    private void Update(){
-        if (Input.GetKeyDown(KeyCode.P)){
-            if (objectGrabbable == null){
-                // not
-                float pickUpDistance = 2f;
-                if (Physics.Raycast(playerFaceTransform.position,playerFaceTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask)){
-                    if (raycastHit.transform.TryGetComponent(out objectGrabbable)){
+    private void Update()
+    {
+        float pickUpDistance = 2f;
+
+        // Draw the raycast for debugging
+        Debug.DrawRay(playerFaceTransform.position, playerFaceTransform.forward * pickUpDistance, Color.green);
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (objectGrabbable == null)
+            {
+                // Attempt to pick up an object
+                if (Physics.Raycast(playerFaceTransform.position, playerFaceTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+                {
+                    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                    {
                         objectGrabbable.Grab(objectGrabPointTransform);
-                        Debug.Log(objectGrabbable);
+                        Debug.Log($"Picked up: {objectGrabbable}");
                     }
                 }
-            } 
-            else {
+            }
+            else
+            {
+                // Drop the currently held object
                 objectGrabbable.Drop();
                 objectGrabbable = null;
+                Debug.Log("Dropped the object.");
             }
         }
     }

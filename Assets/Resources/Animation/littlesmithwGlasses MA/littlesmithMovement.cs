@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class littlesmithMovement : MonoBehaviour
+public class LittlesmithMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
@@ -10,6 +10,9 @@ public class littlesmithMovement : MonoBehaviour
     [SerializeField] private GameObject triggerObject; // Assign specific game object in Inspector
     [SerializeField] private LayerMask groundLayer; // Ground layer for ground check
     [SerializeField] private float groundCheckDistance = 0.1f; // Ground check distance
+    [SerializeField] private Transform cameraTransform; // Assign camera transform in Inspector
+    [SerializeField] private LayerMask obstructionLayer; // Layer for objects to hide
+    [SerializeField] private float transparency = 0.2f; // Opacity level for obstructions
 
     private Animator animator;
     private Rigidbody rb;
@@ -17,6 +20,8 @@ public class littlesmithMovement : MonoBehaviour
     private float horizontal;
     private bool isHolding = false;
     private bool isGrounded = false;
+    private List<GameObject> hiddenObjects = new List<GameObject>();
+    private Dictionary<GameObject, Material[]> originalMaterials = new Dictionary<GameObject, Material[]>();
 
     private void Awake()
     {
@@ -30,6 +35,7 @@ public class littlesmithMovement : MonoBehaviour
     {
         InputHandler();
         CheckGround();
+        CheckObstructions();
     }
 
     private void FixedUpdate()
@@ -78,7 +84,6 @@ public class littlesmithMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // Ensure "isHolding" only turns false if the triggerObject completely exits
         if (other.gameObject == triggerObject && other.CompareTag("Package"))
         {
             Collider[] colliders = Physics.OverlapSphere(triggerObject.transform.position, 0.1f);
@@ -110,6 +115,65 @@ public class littlesmithMovement : MonoBehaviour
         if (!isGrounded)
         {
             rb.AddForce(Vector3.down * 20f, ForceMode.Acceleration);
+        }
+    }
+
+    private void CheckObstructions()
+    {
+        // Restore visibility of previous hidden objects
+        foreach (GameObject obj in hiddenObjects)
+        {
+            if (obj != null && originalMaterials.ContainsKey(obj))
+            {
+                Renderer renderer = obj.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderer.materials = originalMaterials[obj]; // Restore original materials
+                }
+            }
+        }
+        hiddenObjects.Clear();
+        originalMaterials.Clear();
+
+        // Check for obstructions
+        Vector3 directionToPlayer = transform.position - cameraTransform.position;
+        Ray ray = new Ray(cameraTransform.position, directionToPlayer);
+        RaycastHit[] hits = Physics.RaycastAll(ray, directionToPlayer.magnitude, obstructionLayer);
+
+        foreach (RaycastHit hit in hits)
+        {
+            GameObject obj = hit.collider.gameObject;
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                if (!originalMaterials.ContainsKey(obj))
+                {
+                    originalMaterials[obj] = renderer.materials; // Store original materials
+
+                    // Create transparent materials
+                    Material[] transparentMats = new Material[renderer.materials.Length];
+                    for (int i = 0; i < renderer.materials.Length; i++)
+                    {
+                        Material originalMaterial = renderer.materials[i];
+                        Material transparentMaterial = new Material(originalMaterial)
+                        {
+                            color = new Color(originalMaterial.color.r, originalMaterial.color.g, originalMaterial.color.b, transparency)
+                        };
+                        transparentMaterial.SetFloat("_Mode", 2); // Transparent mode
+                        transparentMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                        transparentMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                        transparentMaterial.SetInt("_ZWrite", 0);
+                        transparentMaterial.DisableKeyword("_ALPHATEST_ON");
+                        transparentMaterial.EnableKeyword("_ALPHABLEND_ON");
+                        transparentMaterial.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                        transparentMaterial.renderQueue = 3000;
+
+                        transparentMats[i] = transparentMaterial;
+                    }
+                    renderer.materials = transparentMats; // Apply transparent materials
+                }
+                hiddenObjects.Add(obj);
+            }
         }
     }
 }
