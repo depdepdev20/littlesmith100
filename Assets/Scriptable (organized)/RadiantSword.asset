@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 0c24511b99ae1554da4c2d9a92ac6062, type: 3}
   weaponName: Radiant Sword
   modelPrefab: {fileID: 919132149155446097, guid: 5b41b2063c9545c448eca8419133da91, type: 3}
-  unlocked: 0
+  unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
@@ -25,7 +25,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 7086b867dbcb8df48905d27eab45f38c, type: 3}
     name: Emerald
     quantity: 1
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 3
   - image: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     name: Diamond

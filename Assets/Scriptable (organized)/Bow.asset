@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 5d6948e56144ea54ea51f967aab14e5e, type: 3}
   weaponName: Amethyst Chaospiercer
   modelPrefab: {fileID: 919132149155446097, guid: ebb78d4481db7d8418f0519aabb53ff8, type: 3}
-  unlocked: 0
+  unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 9e3414591574c0546b045cc67788b662, type: 3}
     name: Amethyst

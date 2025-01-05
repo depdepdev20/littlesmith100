@@ -48,6 +48,15 @@ public class CraftingUIManager : MonoBehaviour
             UpdateUIForNoWeaponSelected();
         }
 
+        // Close crafting UI and reset quantity slider
+        if (craftingUICanvas.activeSelf)
+        {
+            craftingUICanvas.SetActive(false); 
+            RefreshOwnedCounts(); // updating owned counts
+            quantitySlider.value = 1; // Reset the quantity slider
+            quantityText.text = "Quantity: 1"; // Update quantity text
+        }
+
         Debug.Log("Crafting UI refreshed.");
     }
 

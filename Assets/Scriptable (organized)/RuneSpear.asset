@@ -15,17 +15,17 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 5a158c881c5a3a742a6e9dce66bb2815, type: 3}
   weaponName: Aetherium Rune Spear
   modelPrefab: {fileID: 919132149155446097, guid: 989510beb782c7e469cce6e54849a342, type: 3}
-  unlocked: 0
+  unlocked: 1
   materials:
   - image: {fileID: 21300000, guid: 5b08a458f55327d4eab90830ff07b04f, type: 3}
     name: Platinum
     quantity: 2
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 4
   - image: {fileID: 21300000, guid: dd150a6932ecfd04cb3786ac1d98962b, type: 3}
-    name: Orichalchum
+    name: Orichalcum
     quantity: 3
-    is_unlocked: 0
+    is_unlocked: 1
     unlockChapter: 4
   sellPrice: 230
   whenToUnlock: 4
