@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ExpenseManager : MonoBehaviour
 {
@@ -15,11 +16,16 @@ public class ExpenseManager : MonoBehaviour
     [SerializeField] private List<ChapterMultipliers> chapterMultipliers;
 
     [Header("Time Settings")]
-    [SerializeField] private int expenseIntervalDays = 10; 
+    [SerializeField] private int expenseIntervalDays = 10;
 
     [Header("Scene Settings")]
-    [SerializeField] private string transitionSceneName = "TransitionScene"; 
-    [SerializeField] private string gameOverSceneName = "GameOver"; 
+    [SerializeField] private string transitionSceneName = "TransitionScene";
+    [SerializeField] private string gameOverSceneName = "GameOver";
+
+    [Header("Notification Settings")]
+    [SerializeField] private GameObject expenseNotificationPanel; // Notification panel
+    [SerializeField] private TMP_Text expenseMessage; // Text to display expense message
+    [SerializeField] private float notificationDuration = 2f; // Duration to show the notification
 
     [System.Serializable]
     public class ChapterMultipliers
@@ -29,9 +35,19 @@ public class ExpenseManager : MonoBehaviour
         public float electricityMultiplier = 1.0f;
         public float propertyTaxMultiplier = 1.0f;
     }
-    
+
     private void Start()
     {
+        // Ensure the notification panel is hidden initially
+        if (expenseNotificationPanel != null)
+        {
+            expenseNotificationPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Expense Notification Panel is not assigned!");
+        }
+
         StartCoroutine(DeductExpensesRoutine());
     }
 
@@ -53,10 +69,9 @@ public class ExpenseManager : MonoBehaviour
         }
     }
 
-
     private void DeductExpenses()
     {
-        int currentChapter = ChapterManager.instance.CurrentChapter - 1; 
+        int currentChapter = ChapterManager.instance.CurrentChapter - 1;
         ChapterMultipliers multipliers = GetChapterMultipliers(currentChapter);
 
         int totalRent = Mathf.RoundToInt(baseRent * multipliers.rentMultiplier);
@@ -73,10 +88,12 @@ public class ExpenseManager : MonoBehaviour
         if (success)
         {
             Debug.Log($"Successfully deducted {totalExpenses} coins.");
+            ShowExpenseNotification($"-{totalExpenses} Coin Expense");
         }
         else
         {
             Debug.LogWarning("Not enough coins to cover expenses!");
+            ShowExpenseNotification("Failed to pay expenses! Not enough coins.");
         }
 
         CheckForGameOver();
@@ -87,7 +104,7 @@ public class ExpenseManager : MonoBehaviour
         if (chapterIndex < 0 || chapterIndex >= chapterMultipliers.Count)
         {
             Debug.LogWarning("Chapter index out of bounds, using default multipliers.");
-            return new ChapterMultipliers(); 
+            return new ChapterMultipliers();
         }
 
         return chapterMultipliers[chapterIndex];
@@ -95,7 +112,6 @@ public class ExpenseManager : MonoBehaviour
 
     private void CheckForGameOver()
     {
-        
         int currentMoney = ResourceManagerCode.instance.GetResourceValue("coin");
 
         if (currentMoney <= 200)
@@ -109,5 +125,22 @@ public class ExpenseManager : MonoBehaviour
     {
         SceneTransitionData.nextScene = gameOverSceneName;
         SceneManager.LoadScene(transitionSceneName);
+    }
+
+    private void ShowExpenseNotification(string message)
+    {
+        if (expenseNotificationPanel != null && expenseMessage != null)
+        {
+            expenseMessage.text = message;
+            expenseNotificationPanel.SetActive(true);
+            StartCoroutine(HideExpenseNotification());
+        }
+    }
+
+    private IEnumerator HideExpenseNotification()
+    {
+        yield return new WaitForSeconds(notificationDuration);
+        if (expenseNotificationPanel != null)
+            expenseNotificationPanel.SetActive(false);
     }
 }
