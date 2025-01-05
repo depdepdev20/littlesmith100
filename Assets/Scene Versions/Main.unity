@@ -15642,6 +15642,7 @@ GameObject:
   - component: {fileID: 1403926374}
   - component: {fileID: 1403926378}
   - component: {fileID: 1403926377}
+  - component: {fileID: 1403926379}
   m_Layer: 0
   m_Name: Time Manager
   m_TagString: Untagged
@@ -15726,6 +15727,26 @@ MonoBehaviour:
   onPrologueTalkFinished: {fileID: 11400000, guid: a42d0759f4968004791449a1b6311c03, type: 2}
   transitionSceneName: TransitionScene
   nextSceneName: GameOver
+--- !u!114 &1403926379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403926373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291dd1be2e4e8a445a884ca8c9fd7808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRent: 1000
+  baseTax: 500
+  baseElectricity: 300
+  basePropertyTax: 200
+  chapterMultipliers: []
+  expenseIntervalDays: 10
+  transitionSceneName: TransitionScene
+  gameOverSceneName: GameOver
 --- !u!1 &1413570024
 GameObject:
   m_ObjectHideFlags: 0
