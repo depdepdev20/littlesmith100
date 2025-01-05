@@ -8,7 +8,11 @@ public class ResourceManagerCode : MonoBehaviour
     public static ResourceManagerCode instance;
 
     // Resource values
+<<<<<<< Updated upstream
     private int coins = 1000000;
+=======
+    private int coins = 30000;
+>>>>>>> Stashed changes
     private int wood = 100;
     private int iron = 200;
     private int silver = 300; // New material
