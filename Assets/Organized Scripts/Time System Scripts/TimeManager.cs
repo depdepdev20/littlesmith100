@@ -47,15 +47,15 @@ public class TimeManager : MonoBehaviour
         sunLight = sunTransform.GetComponent<Light>();
         moonLight = moonTransform.GetComponent<Light>();
 
-        // Reset the BoolVariableSO values at the start
-        if (rollthegoodending != null)
-            rollthegoodending.SetValue(false);
+        //// Reset the BoolVariableSO values at the start
+        //if (rollthegoodending != null)
+        //    rollthegoodending.SetValue(false);
 
-        if (gotgameover != null)
-            gotgameover.SetValue(false);
+        //if (gotgameover != null)
+        //    gotgameover.SetValue(false);
 
-        // Trigger an initial check in case `totalDays` was set via the Inspector
-        CheckGameEnding();
+        //// Trigger an initial check in case `totalDays` was set via the Inspector
+        //CheckGameEnding();
 
         UpdateInspectorDisplays(); // Update displays at the start
         StartCoroutine(TimeUpdate());
