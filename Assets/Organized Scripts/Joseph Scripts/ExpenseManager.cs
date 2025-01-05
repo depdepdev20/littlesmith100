@@ -29,7 +29,7 @@ public class ExpenseManager : MonoBehaviour
         public float electricityMultiplier = 1.0f;
         public float propertyTaxMultiplier = 1.0f;
     }
-
+    
     private void Start()
     {
         StartCoroutine(DeductExpensesRoutine());
