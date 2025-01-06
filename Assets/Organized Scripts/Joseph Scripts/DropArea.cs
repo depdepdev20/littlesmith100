@@ -33,7 +33,7 @@ public class DropArea : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Sale Notification Panel is not assigned!");
+            Debug.LogError("Sale Notification Panel is not assigned!"); 
         }
     }
 

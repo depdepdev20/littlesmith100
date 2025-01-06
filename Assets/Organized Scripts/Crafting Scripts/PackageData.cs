@@ -17,7 +17,7 @@ public class PackageData : MonoBehaviour
     // Accessor for weaponSellPrice
     public int weaponSellPrice => weapon != null ? weapon.sellPrice : 0;
 
-    public void SetData(int quantity, Weapon weaponData)
+    public void SetData(int quantity, Weapon weaponData) //akses lgsg dri scriptable
     {
         weapon = weaponData;
         weaponQuantity = Mathf.Clamp(quantity, 0, maxCapacity);
@@ -28,7 +28,7 @@ public class PackageData : MonoBehaviour
         }
 
         UpdateDisplay();
-        Debug.Log($"Package created: {weaponQuantity}x {weapon.weaponName}, Sell Price: {weapon.sellPrice}G!");
+        Debug.Log($"Package created: {weaponQuantity}x {weapon.weaponName}, Sell Price: {weapon.sellPrice}G each!");
     }
 
     public int AddWeapons(int amount)
@@ -49,7 +49,8 @@ public class PackageData : MonoBehaviour
         UpdateDisplay();
         if (weaponQuantity <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log($"Package containing {weaponName} is empty. Destroying after 2 seconds.");
+            StartCoroutine(DestroyAfterDelay(2f));
         }
 
         return removedAmount;
@@ -61,5 +62,11 @@ public class PackageData : MonoBehaviour
         {
             detailInfo.text = $"{weapon.weaponName}: {weaponQuantity}/{maxCapacity}";
         }
+    }
+
+    private System.Collections.IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }
