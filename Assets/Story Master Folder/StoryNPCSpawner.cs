@@ -25,6 +25,10 @@ public class StoryNPCSpawner : MonoBehaviour
     [Header("Schedules")]
     [SerializeField] private List<NPCSchedule> npcSchedules;
 
+    [Header("Animation Controllers")]
+    [SerializeField] private AnimatorOverrideController walkingAnimatorController;
+    [SerializeField] private AnimatorOverrideController idlingAnimatorController;
+
     private List<GameObject> activeNpcs = new List<GameObject>();
     private bool isSpawning = false;
 
@@ -91,6 +95,10 @@ public class StoryNPCSpawner : MonoBehaviour
             yield break;
         }
 
+        // Subscribe to events
+        storyNpcWalk.OnStartWalking += () => SwitchAnimationController(storyNpcWalk, walkingAnimatorController);
+        storyNpcWalk.OnStartIdling += () => SwitchAnimationController(storyNpcWalk, idlingAnimatorController);
+
         // Assign destinations and start the walk routine to idle location
         storyNpcWalk.SetDestinations(schedule.preIdleDestinations, schedule.idleDestination, null);
 
@@ -118,8 +126,19 @@ public class StoryNPCSpawner : MonoBehaviour
         // At this point, NPC has completed its final path. Remove it from active list but do not destroy it.
         activeNpcs.Remove(npc);
         Debug.Log($"{npc.name} has completed its route and awaits collider-based destruction.");
+
+        // Unsubscribe from events to avoid memory leaks
+        storyNpcWalk.OnStartWalking -= () => SwitchAnimationController(storyNpcWalk, walkingAnimatorController);
+        storyNpcWalk.OnStartIdling -= () => SwitchAnimationController(storyNpcWalk, idlingAnimatorController);
     }
 
+    private void SwitchAnimationController(StoryNPCWalk storyNpcWalk, AnimatorOverrideController controller)
+    {
+        if (storyNpcWalk.animator != null && controller != null)
+        {
+            storyNpcWalk.animator.runtimeAnimatorController = controller;
+        }
+    }
 
     public void SubmitQuest(Weapon weapon)
     {

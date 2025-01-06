@@ -619,8 +619,6 @@ MonoBehaviour:
   submissionCollider: {fileID: 2700168934537223323}
   talkingCollider: {fileID: 8239688011425843836}
   idleFacingDirection: {x: 0, y: 0, z: 1}
-  walkingAnimatorController: {fileID: 9100000, guid: 13da79bac86051f4b94cae8b4a30064c, type: 2}
-  idleAnimatorController: {fileID: 9100000, guid: 9488b1d94f028b049b4aa682659d8db6, type: 2}
   animator: {fileID: 1925525230273626204}
 --- !u!95 &1925525230273626204
 Animator:
@@ -632,7 +630,7 @@ Animator:
   m_GameObject: {fileID: 1283719166005369567}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6595c0c533377904ab0f718b09cafa94, type: 3}
-  m_Controller: {fileID: 9100000, guid: 13da79bac86051f4b94cae8b4a30064c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 899fc682b01013143be7b9417caa1ee1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

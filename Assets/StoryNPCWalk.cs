@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,6 @@ public class StoryNPCWalk : MonoBehaviour
     public NavMeshAgent navAgent;
     private Queue<Transform> destinationsQueue = new Queue<Transform>();
     private Transform currentDestination;
-    private bool isWalking = false;
-    private bool isIdling = false;
 
     [Header("Interaction Colliders")]
     public Collider submissionCollider;
@@ -19,28 +18,44 @@ public class StoryNPCWalk : MonoBehaviour
     [Header("Idle Settings")]
     public Vector3 idleFacingDirection = Vector3.forward;
 
-    [Header("Animation Controllers")]
-    public RuntimeAnimatorController walkingAnimatorController;
-    public RuntimeAnimatorController idleAnimatorController;
-
     [Header("Animation")]
     public Animator animator;
+
+    // Events for toggling states
+    public event Action OnStartWalking;
+    public event Action OnStartIdling;
+
+    private bool isWalking = false;
+    private bool isIdling = false;
 
     private void Start()
     {
         if (navAgent == null)
-        {
             navAgent = GetComponent<NavMeshAgent>();
-        }
 
         if (animator == null)
-        {
             animator = GetComponent<Animator>();
-        }
 
         if (submissionCollider == null || talkingCollider == null)
-        {
             Debug.LogWarning("One or both interaction colliders are not assigned!");
+    }
+
+    private void Update()
+    {
+        // Constantly check for the NPC's walking state and raise events accordingly.
+        if (navAgent.velocity.sqrMagnitude > 0.01f && !isWalking)
+        {
+            isWalking = true;
+            isIdling = false;
+            OnStartWalking?.Invoke();
+            UpdateAnimation();
+        }
+        else if (navAgent.velocity.sqrMagnitude <= 0.01f && !isIdling)
+        {
+            isWalking = false;
+            isIdling = true;
+            OnStartIdling?.Invoke();
+            UpdateAnimation();
         }
     }
 
@@ -70,15 +85,11 @@ public class StoryNPCWalk : MonoBehaviour
         }
 
         SetInteractionEnabled(false);
-
         StartCoroutine(WalkToDestinations());
     }
 
     private IEnumerator WalkToDestinations()
     {
-        isWalking = true;
-        UpdateAnimation();
-
         while (destinationsQueue.Count > 0)
         {
             currentDestination = destinationsQueue.Dequeue();
@@ -102,15 +113,10 @@ public class StoryNPCWalk : MonoBehaviour
                 yield break;
             }
         }
-
-        isWalking = false;
-        UpdateAnimation();
     }
 
     private void StartIdling()
     {
-        isIdling = true;
-
         navAgent.isStopped = true;
         navAgent.updateRotation = false;
         navAgent.velocity = Vector3.zero;
@@ -121,13 +127,7 @@ public class StoryNPCWalk : MonoBehaviour
         navAgent.ResetPath();
         SetInteractionEnabled(true);
 
-        // Switch to idle animation controller
-        if (idleAnimatorController != null && animator.runtimeAnimatorController != idleAnimatorController)
-        {
-            animator.runtimeAnimatorController = idleAnimatorController;
-        }
-
-        UpdateAnimation();
+        OnStartIdling?.Invoke(); // Raise event
     }
 
     public void ResumeWalking(Transform[] postIdleDestinations)
@@ -143,31 +143,18 @@ public class StoryNPCWalk : MonoBehaviour
         }
 
         navAgent.updateRotation = true;
-
-        isIdling = false;
         SetInteractionEnabled(false);
 
-        // Switch back to walking animation controller
-        if (walkingAnimatorController != null && animator.runtimeAnimatorController != walkingAnimatorController)
-        {
-            animator.runtimeAnimatorController = walkingAnimatorController;
-        }
-
-        UpdateAnimation();
         StartCoroutine(WalkToDestinations());
     }
 
     private void SetInteractionEnabled(bool isEnabled)
     {
         if (submissionCollider != null)
-        {
             submissionCollider.enabled = isEnabled;
-        }
 
         if (talkingCollider != null)
-        {
             talkingCollider.enabled = isEnabled;
-        }
     }
 
     private void UpdateAnimation()
