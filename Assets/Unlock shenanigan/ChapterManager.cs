@@ -1,15 +1,18 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ChapterManager : MonoBehaviour
 {
     public static ChapterManager instance;
 
-
     [SerializeField] private int currentChapter = 1;
     [SerializeField] private int totalChapters = 7;
+
+    // Event that listeners can subscribe to
+    public event Action<int> OnChapterUnlocked;
 
     private void Awake()
     {
@@ -24,10 +27,7 @@ public class ChapterManager : MonoBehaviour
         }
     }
 
-    public int CurrentChapter
-    {
-        get { return currentChapter; }
-    }
+    public int CurrentChapter => currentChapter;
 
     private List<TMP_Dropdown> chapterDropdowns = new List<TMP_Dropdown>();
 
@@ -58,14 +58,10 @@ public class ChapterManager : MonoBehaviour
         {
             UnlockNextChapter();
         }
-        UpdateDropdownList();
 
+        UpdateDropdownList();
     }
 
-    /// <summary>
-    /// Sets the current chapter to the specified value.
-    /// </summary>
-    /// <param name="chapter">The chapter to set.</param>
     public void SetCurrentChapter(int chapter)
     {
         if (chapter < 1)
@@ -94,13 +90,15 @@ public class ChapterManager : MonoBehaviour
             currentChapter++;
             Debug.Log($"Chapter increased to {currentChapter}");
             UpdateDropdownOptions(currentChapter);
+
+            // Raise the event
+            OnChapterUnlocked?.Invoke(currentChapter);
         }
         else
         {
             Debug.Log("Already at the last chapter.");
         }
     }
-
 
     private void UpdateDropdownList()
     {
@@ -122,7 +120,6 @@ public class ChapterManager : MonoBehaviour
 
     private void UpdateDropdownOptions(int chapter)
     {
-        // Accumulate options up to the current chapter
         List<OptionData> availableOptions = new List<OptionData>();
         for (int i = 0; i <= chapter && i < chapterDropdownOptions.Count; i++)
         {
@@ -133,57 +130,30 @@ public class ChapterManager : MonoBehaviour
         {
             if (dropdown == null) continue;
 
-            Debug.Log($"Updating dropdown: {dropdown.name}");
-
-            // Clear existing options
             dropdown.ClearOptions();
 
-            // Convert accumulated options to TMP_Dropdown.OptionData
             List<TMP_Dropdown.OptionData> tmpOptions = new List<TMP_Dropdown.OptionData>();
             foreach (var option in availableOptions)
             {
                 tmpOptions.Add(new TMP_Dropdown.OptionData(option.Text, option.Icon));
             }
 
-            // Add new options
             dropdown.AddOptions(tmpOptions);
-            Debug.Log($"Added {tmpOptions.Count} options to {dropdown.name}");
 
-            // Set the dropdown's current value only if it's valid
             if (tmpOptions.Count > 0)
             {
                 int currentValue = dropdown.value;
                 if (currentValue < 0 || currentValue >= tmpOptions.Count)
                 {
-                    currentValue = 0; // Default to the first option if the current value is invalid
+                    currentValue = 0;
                 }
 
                 dropdown.value = currentValue;
                 dropdown.RefreshShownValue();
-
-                Debug.Log($"Dropdown {dropdown.name} value set to: {currentValue}");
-
-                // Update the caption image based on the current selection
-                if (dropdown.captionImage != null)
-                {
-                    TMP_Dropdown.OptionData selectedOption = tmpOptions[dropdown.value];
-                    dropdown.captionImage.sprite = selectedOption.image;
-                    dropdown.captionImage.enabled = selectedOption.image != null;
-
-                    if (selectedOption.image != null)
-                    {
-                        Debug.Log($"Caption image for {dropdown.name} updated to: {selectedOption.image.name}");
-                    }
-                    else
-                    {
-                        Debug.Log($"No image for selected option in {dropdown.name}, hiding caption image.");
-                    }
-                }
             }
             else
             {
-                Debug.Log($"No options available for {dropdown.name}");
-                dropdown.value = -1; // No valid options
+                dropdown.value = -1;
                 dropdown.RefreshShownValue();
             }
         }

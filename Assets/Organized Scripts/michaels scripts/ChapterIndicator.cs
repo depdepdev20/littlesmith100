@@ -3,56 +3,83 @@ using TMPro;
 
 public class ChapterIndicator : MonoBehaviour
 {
-    [SerializeField] private GameObject[] chapterPanels;
-    [SerializeField] private TextMeshProUGUI chapterText;
-    private int currentChapter;
+    [Header("Chapter Panels")]
+    [SerializeField] private Transform panelParent; // Parent object containing all chapter panels
 
-    private void Start()
-    {
-        UpdateChapter();
-        UpdateChapterText(currentChapter);
-    
-        HideAllPanels();
-    }
+    [Header("Chapter Text")]
+    [SerializeField] private TMP_Text chapterText; // TextMeshProUGUI element to display the current chapter
+
+    private int lastDisplayedChapter = -1; // Tracks the last displayed chapter to avoid redundant updates
 
     private void Update()
     {
-        if (currentChapter != ChapterManager.instance.CurrentChapter)
+        if (ChapterManager.instance == null)
         {
-            UpdateChapter();
-            UpdateChapterText(currentChapter);
+            Debug.LogWarning("ChapterManager instance not found!");
+            return;
+        }
+
+        int currentChapter = ChapterManager.instance.CurrentChapter;
+
+        // Update only if the chapter has changed
+        if (currentChapter != lastDisplayedChapter)
+        {
+            lastDisplayedChapter = currentChapter;
+            UpdateChapterDisplay(currentChapter);
         }
     }
 
-    private void UpdateChapter()
+    /// <summary>
+    /// Updates the chapter display, including the text and panels.
+    /// </summary>
+    private void UpdateChapterDisplay(int chapter)
     {
-        currentChapter = ChapterManager.instance.CurrentChapter;
-    }
-
-    private void UpdateChapterText(int chapter)
-    {
-        chapterText.text = "Chapter " + chapter;
-    }
-
-    public void ShowNextChapterPanel()
-    {
-        int nextChapter = currentChapter + 1;
-
-        if (nextChapter < chapterPanels.Length)
+        // Update the chapter text
+        if (chapterText != null)
         {
-            chapterPanels[nextChapter].SetActive(true);
+            chapterText.text = $"Chapter {chapter}";
         }
         else
         {
-            Debug.LogWarning("Tidak ada panel untuk chapter berikutnya.");
+            Debug.LogWarning("Chapter text is not assigned!");
+        }
+
+        // Show the corresponding panel
+        if (panelParent == null)
+        {
+            Debug.LogError("Panel parent not assigned!");
+            return;
+        }
+
+        for (int i = 0; i < panelParent.childCount; i++)
+        {
+            GameObject panel = panelParent.GetChild(i).gameObject;
+
+            // Activate the correct panel
+            if (panel.name == $"Ch {chapter} Panel")
+            {
+                panel.SetActive(true);
+
+                // Optionally hide the panel after a delay
+                Invoke(nameof(HideAllPanels), 3f); // Hides after 3 seconds
+            }
+            else
+            {
+                panel.SetActive(false); // Deactivate other panels
+            }
         }
     }
 
-    public void HideAllPanels()
+    /// <summary>
+    /// Hides all chapter panels under the parent object.
+    /// </summary>
+    private void HideAllPanels()
     {
-        foreach (GameObject panel in chapterPanels)
+        if (panelParent == null) return;
+
+        for (int i = 0; i < panelParent.childCount; i++)
         {
-            panel.SetActive(false);
+            panelParent.GetChild(i).gameObject.SetActive(false);
         }
     }
 }
