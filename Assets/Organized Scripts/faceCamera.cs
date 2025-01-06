@@ -1,20 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class faceCamera : MonoBehaviour
+public class FaceCamera : MonoBehaviour
 {
-    private Camera mainCamera;
+    private Camera activeCamera;
 
-    private void Awake()
+    private void Start()
     {
-        mainCamera = Camera.main;
+        UpdateActiveCamera();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        transform.LookAt(mainCamera.transform);
+        UpdateActiveCamera();
+    }
+
+    private void Update()
+    {
+        if (activeCamera == null)
+        {
+            UpdateActiveCamera();
+        }
+
+        // Make the UI face the active camera
+        transform.LookAt(activeCamera.transform);
         transform.Rotate(0, 180, 0);
+    }
+
+    private void UpdateActiveCamera()
+    {
+        activeCamera = Camera.main; // Update reference to the active main camera
     }
 }

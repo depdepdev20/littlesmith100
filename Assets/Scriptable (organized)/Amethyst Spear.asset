@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: bdc138417274ab749b396288205ef76d, type: 3}
   weaponName: Amethyst Spear
   modelPrefab: {fileID: 919132149155446097, guid: 4490219686d824d429e10412df64d052, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 9e3414591574c0546b045cc67788b662, type: 3}
     name: Amethyst

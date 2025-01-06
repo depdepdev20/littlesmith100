@@ -7,13 +7,12 @@ using KasperDev.ModularComponents;
 public class NPCSchedule
 {
     public Weapon weapon; // Reference to Weapon ScriptableObject
-    public BoolVariableSO questSubmitted; // Reference to BoolVariableSO for quest status
-    public int[] openTimes = new int[7];
-    public int[] closeTimes = new int[7];
-    public float waitDuration = 5f; // Duration to wait at the idle destination
-    public Transform[] preIdleDestinations; // Destinations before idling
-    public Transform idleDestination; // Idle destination
-    public Transform[] postIdleDestinations; // Destinations after idling
+    public BoolVariableSO questSubmitted; // BoolVariableSO for quest status
+    public int spawnHour = 0; // Time (hour) when NPC should spawn
+    public int departureHour = 0; // Time (hour) when NPC should leave idle position
+    public Transform[] preIdleDestinations; // Path to idle destination
+    public Transform idleDestination; // Idle location
+    public Transform[] postIdleDestinations; // Path after idling
 }
 
 public class StoryNPCSpawner : MonoBehaviour
@@ -33,6 +32,7 @@ public class StoryNPCSpawner : MonoBehaviour
     {
         foreach (var schedule in npcSchedules)
         {
+            // Only proceed if the weapon is unlocked and the quest is not submitted
             if (schedule.weapon.unlocked && !schedule.questSubmitted.Value)
             {
                 HandleNPCSpawning(schedule);
@@ -42,60 +42,84 @@ public class StoryNPCSpawner : MonoBehaviour
 
     private void HandleNPCSpawning(NPCSchedule schedule)
     {
-        int totalDays = TimeManager.Instance.GetTotalDays();
-        int currentDayIndex = (totalDays - 1) % 7;
         int currentHour = TimeManager.Instance.GetTimestamp().hour;
 
-        int openTime = schedule.openTimes[currentDayIndex];
-        int closeTime = schedule.closeTimes[currentDayIndex];
-
-        if (currentHour >= openTime && currentHour < closeTime && activeNpcs.Count < maxNpcCount && !isSpawning)
+        // Check if it's the right time to spawn the NPC
+        if (currentHour == schedule.spawnHour && activeNpcs.Count < maxNpcCount && !isSpawning)
         {
-            StartCoroutine(SpawnNpcWithDelay(schedule));
+            StartCoroutine(SpawnNpcWithSchedule(schedule));
         }
     }
 
-    private IEnumerator SpawnNpcWithDelay(NPCSchedule schedule)
+    private IEnumerator SpawnNpcWithSchedule(NPCSchedule schedule)
     {
         isSpawning = true;
-        float waitTime = Random.Range(2f, 4f);
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(Random.Range(2f, 4f));
 
         if (activeNpcs.Count < maxNpcCount)
         {
-            SpawnNpc(schedule);
+            GameObject npc = SpawnNpc(schedule);
+            if (npc != null)
+            {
+                StartCoroutine(HandleNPCSchedule(npc, schedule));
+            }
         }
+
         isSpawning = false;
     }
 
-    private void SpawnNpc(NPCSchedule schedule)
+    private GameObject SpawnNpc(NPCSchedule schedule)
     {
         if (npcPrefabs.Length == 0 || spawnPoint == null)
         {
             Debug.LogError("No NPC prefabs assigned or spawn point is not set!");
-            return;
+            return null;
         }
 
         GameObject selectedNpcPrefab = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
         GameObject newNpc = Instantiate(selectedNpcPrefab, spawnPoint.position, spawnPoint.rotation);
-
-        if (newNpc != null)
-        {
-            NPCWalk npcWalk = newNpc.GetComponent<NPCWalk>();
-            if (npcWalk != null)
-            {
-                // Combine destinations for pre-idle, idle, and post-idle phases
-                List<Transform> allDestinations = new List<Transform>();
-                allDestinations.AddRange(schedule.preIdleDestinations);
-                allDestinations.Add(schedule.idleDestination);
-                allDestinations.AddRange(schedule.postIdleDestinations);
-
-                npcWalk.SetDestinations(allDestinations.ToArray());
-                npcWalk.SetWaitDuration(schedule.waitDuration); // Set wait duration at the idle destination
-            }
-            activeNpcs.Add(newNpc);
-        }
+        if (newNpc != null) activeNpcs.Add(newNpc);
+        return newNpc;
     }
+
+    private IEnumerator HandleNPCSchedule(GameObject npc, NPCSchedule schedule)
+    {
+        StoryNPCWalk storyNpcWalk = npc.GetComponent<StoryNPCWalk>();
+        if (storyNpcWalk == null)
+        {
+            Debug.LogError("NPC does not have a StoryNPCWalk component!");
+            yield break;
+        }
+
+        // Assign destinations and start the walk routine to idle location
+        storyNpcWalk.SetDestinations(schedule.preIdleDestinations, schedule.idleDestination, null);
+
+        // Wait until the NPC reaches the idle destination
+        while (Vector3.Distance(storyNpcWalk.GetCurrentDestination(), schedule.idleDestination.position) > storyNpcWalk.GetNavMeshAgent().stoppingDistance)
+        {
+            yield return null;
+        }
+
+        // Wait until the departure time
+        while (TimeManager.Instance.GetTimestamp().hour < schedule.departureHour)
+        {
+            yield return null;
+        }
+
+        // Start NPC moving to the final destination
+        storyNpcWalk.ResumeWalking(schedule.postIdleDestinations);
+
+        // Wait until the NPC finishes its journey
+        while (storyNpcWalk.IsMoving())
+        {
+            yield return null;
+        }
+
+        // At this point, NPC has completed its final path. Remove it from active list but do not destroy it.
+        activeNpcs.Remove(npc);
+        Debug.Log($"{npc.name} has completed its route and awaits collider-based destruction.");
+    }
+
 
     public void SubmitQuest(Weapon weapon)
     {
@@ -112,10 +136,7 @@ public class StoryNPCSpawner : MonoBehaviour
     {
         foreach (GameObject npc in activeNpcs)
         {
-            if (npc != null)
-            {
-                Destroy(npc);
-            }
+            if (npc != null) Destroy(npc);
         }
         activeNpcs.Clear();
     }

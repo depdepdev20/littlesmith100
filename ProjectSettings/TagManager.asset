@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - NPCBuyer
   - obstruction
+  - NPCTalking
   layers:
   - Default
   - TransparentFX
