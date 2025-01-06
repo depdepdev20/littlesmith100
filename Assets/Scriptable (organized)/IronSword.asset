@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 5ea8294bf68e82848a6d8f171c248f81, type: 3}
   weaponName: Iron Sword
   modelPrefab: {fileID: 919132149155446097, guid: c62d420af5a9b8c47be5e01432e006e0, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood

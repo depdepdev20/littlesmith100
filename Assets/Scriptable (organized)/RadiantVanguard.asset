@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: c45447d889032a94f82ab1e13592a464, type: 3}
   weaponName: Radiant Vanguard
   modelPrefab: {fileID: 919132149155446097, guid: 14646d3e726324c47b3274b054d801bc, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 7086b867dbcb8df48905d27eab45f38c, type: 3}
     name: Emerald

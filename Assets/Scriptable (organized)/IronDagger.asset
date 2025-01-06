@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 4517ada410c6b2844b20b1f4937affff, type: 3}
   weaponName: Iron Dagger
   modelPrefab: {fileID: 919132149155446097, guid: d2931da0082200b44b96b98c021144bd, type: 3}
-  unlocked: 1
+  unlocked: 0
   materials:
   - image: {fileID: 21300000, guid: 937ada2a7b5783f4a908715cb423ee48, type: 3}
     name: Wood
