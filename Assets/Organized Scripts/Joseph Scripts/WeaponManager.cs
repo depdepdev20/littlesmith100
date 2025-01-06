@@ -5,8 +5,8 @@ public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager Instance;
 
-    // Dictionary to store weapons by name
-    public Dictionary<string, Weapon> weapons = new Dictionary<string, Weapon>();
+    // List to store all loaded weapons
+    [SerializeField] private List<Weapon> weapons = new List<Weapon>();
 
     private void Awake()
     {
@@ -17,78 +17,69 @@ public class WeaponManager : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject); // Ensure there's only one instance
         }
 
-        // Initialize weapons (This assumes that all weapons are loaded into the scene or a list of weapons is available)
+        // Initialize weapons by loading them from the "Resources" folder
         InitializeWeapons();
     }
 
-    // Initialize all weapons from a predefined list or assets
+    // Load all weapons from the "Resources/Weapons" folder
     private void InitializeWeapons()
     {
-        Weapon[] allWeapons = Resources.LoadAll<Weapon>("Weapons");  // Assuming weapons are in the "Weapons" folder in Resources
-        foreach (Weapon weapon in allWeapons)
-        {
-            weapons[weapon.weaponName] = weapon;
-        }
+        Weapon[] allWeapons = Resources.LoadAll<Weapon>("Weapons"); // Folder path in Resources
+        weapons.AddRange(allWeapons);
     }
 
+    // Check if a weapon is unlocked
     public bool IsWeaponUnlocked(string weaponName)
     {
-        if (weapons.ContainsKey(weaponName))
-        {
-            return weapons[weaponName].unlocked;
-        }
-        return false;
+        Weapon weapon = weapons.Find(w => w.weaponName == weaponName);
+        return weapon != null && weapon.unlocked;
     }
 
+    // Set the unlock state of a specific weapon
     public void SetWeaponUnlockState(string weaponName, bool unlocked)
     {
-        if (weapons.ContainsKey(weaponName))
+        Weapon weapon = weapons.Find(w => w.weaponName == weaponName);
+        if (weapon != null)
         {
-            weapons[weaponName].unlocked = unlocked;
+            weapon.unlocked = unlocked;
         }
     }
 
+    // Check if a weapon can be crafted based on the inventory
     public bool CheckIfWeaponCraftable(string weaponName, Inventory inventory)
     {
-        if (weapons.ContainsKey(weaponName))
-        {
-            return weapons[weaponName].CheckIfCraftable(inventory);
-        }
-        return false;
+        Weapon weapon = weapons.Find(w => w.weaponName == weaponName);
+        return weapon != null && weapon.CheckIfCraftable(inventory);
     }
 
-    // Method to retrieve all weapon names (now retrieves from weapons dictionary)
+    // Get a list of all weapon names
     public List<string> GetAllWeaponNames()
     {
-        return new List<string>(weapons.Keys);
+        List<string> weaponNames = new List<string>();
+        foreach (Weapon weapon in weapons)
+        {
+            weaponNames.Add(weapon.weaponName);
+        }
+        return weaponNames;
     }
 
+    // Unlock a weapon and update its state
     public void UnlockWeapon(string weaponName)
     {
-        if (weapons.ContainsKey(weaponName) && !weapons[weaponName].unlocked)
+        Weapon weapon = weapons.Find(w => w.weaponName == weaponName);
+        if (weapon != null && !weapon.unlocked)
         {
-            // Unlock the weapon
-            weapons[weaponName].UnlockWeapon();
-
-            // Optionally, handle the visibility update if needed
-            WeaponVisibilityController controller = FindObjectOfType<WeaponVisibilityController>();
-            if (controller != null)
-            {
-                controller.UpdateVisibility();
-            }
+            weapon.UnlockWeapon();
         }
     }
 
-    // Method to check if a weapon can be unlocked based on the current chapter
+    // Check if a weapon can be unlocked based on the current chapter
     public bool CanUnlockWeapon(string weaponName, int currentChapter)
     {
-        if (weapons.ContainsKey(weaponName))
-        {
-            return weapons[weaponName].CanUnlock(currentChapter);
-        }
-        return false;
+        Weapon weapon = weapons.Find(w => w.weaponName == weaponName);
+        return weapon != null && weapon.CanUnlock(currentChapter);
     }
 }
