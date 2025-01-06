@@ -9,6 +9,9 @@ public class SaveSystem : MonoBehaviour
 
     private string saveFilePath;
 
+    [SerializeField]
+    private DropArea[] dropAreas;
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,6 +35,14 @@ public class SaveSystem : MonoBehaviour
     }
 
     [System.Serializable]
+    public class WeaponRackItem
+    {
+        public string weaponName;
+        public int weaponSellPrice;
+        public int weaponQuantity;
+    }
+
+    [System.Serializable]
     public class SaveData
     {
         public int day;
@@ -39,6 +50,7 @@ public class SaveSystem : MonoBehaviour
         public List<ResourceEntry> resources;
         public int currentChapter;
         public Dictionary<string, bool> weaponUnlocks; // Key-value pair for weapon unlock states
+        public List<WeaponRackItem> weaponRackItems;  // Weapon rack data
     }
 
 
@@ -69,8 +81,23 @@ public class SaveSystem : MonoBehaviour
             new ResourceEntry { resourceName = "obsidian", resourceValue = ResourceManagerCode.instance.GetResourceValue("obsidian") }
         },
             currentChapter = ChapterManager.instance.CurrentChapter,
-            weaponUnlocks = new Dictionary<string, bool>()
+            weaponUnlocks = new Dictionary<string, bool>(),
+            weaponRackItems = new List<WeaponRackItem>()
         };
+
+        foreach (var dropArea in dropAreas)
+        {
+            if (dropArea == null) continue; // Skip if null
+            foreach (var item in dropArea.GetCurrentItems())
+            {
+                data.weaponRackItems.Add(new WeaponRackItem
+                {
+                    weaponName = item.weaponName,
+                    weaponSellPrice = item.weaponSellPrice,
+                    weaponQuantity = item.weaponQuantity
+                });
+            }
+        }
 
         // Populate weapon unlock states
         foreach (string weaponName in WeaponManager.Instance.GetAllWeaponNames())
@@ -113,6 +140,23 @@ public class SaveSystem : MonoBehaviour
             foreach (var weaponUnlock in data.weaponUnlocks)
             {
                 WeaponManager.Instance.SetWeaponUnlockState(weaponUnlock.Key, weaponUnlock.Value);
+            }
+
+            int currentDropAreaIndex = 0;
+            foreach (var weaponRackItem in data.weaponRackItems)
+            {
+                if (dropAreas.Length == 0) break;
+
+                var dropArea = dropAreas[currentDropAreaIndex];
+                if (dropArea != null)
+                {
+                    dropArea.AddItemToRack(weaponRackItem.weaponName, weaponRackItem.weaponSellPrice, weaponRackItem.weaponQuantity);
+
+                    if (dropArea.IsFull())
+                    {
+                        currentDropAreaIndex = (currentDropAreaIndex + 1) % dropAreas.Length;
+                    }
+                }
             }
 
             Debug.Log("Game loaded successfully.");

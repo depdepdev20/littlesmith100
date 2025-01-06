@@ -270,6 +270,38 @@ public class DropArea : MonoBehaviour
         }
     }
 
+    public bool IsFull()
+    {
+        // Example logic: Check if the total quantity of items exceeds a specific limit
+        int totalQuantity = currentItems.Sum(item => item.weaponQuantity);
+        return totalQuantity >= 10; // Replace 10 with your desired capacity limit
+    }
+
+
+    public List<Item> GetCurrentItems()
+    {
+        return currentItems;
+    }
+
+    public void ClearCurrentItems()
+    {
+        currentItems.Clear();
+    }
+
+    public void AddItemToRack(string weaponName, int weaponSellPrice, int weaponQuantity)
+    {
+        var existingItem = currentItems.FirstOrDefault(item => item.weaponName == weaponName);
+        if (existingItem != null)
+        {
+            existingItem.weaponQuantity += weaponQuantity;
+        }
+        else
+        {
+            currentItems.Add(new Item(weaponName, weaponSellPrice, weaponQuantity));
+        }
+    }
+
+
 
 
     private void ShowSaleNotification(string message)
