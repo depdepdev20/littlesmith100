@@ -6,11 +6,14 @@ using System.Linq;
 
 public class DropArea : MonoBehaviour
 {
-    private List<Item> currentItems = new List<Item>();
     private NPCBuyer currentBuyer;
 
     [SerializeField]
     private GameObject targetObject;
+
+    [SerializeField] private List<Item> currentItems = new List<Item>();
+
+
 
     [SerializeField]
     private GameObject saleNotificationPanel; // Reference to the Sale Notification Panel
@@ -18,6 +21,8 @@ public class DropArea : MonoBehaviour
     private TMP_Text saleMessage; // Reference to the TextMeshPro text for sale message
     [SerializeField]
     private float notificationDuration = 2f; // Duration to display the notification
+
+
 
     void Start()
     {
@@ -36,7 +41,7 @@ public class DropArea : MonoBehaviour
             Debug.LogError("Sale Notification Panel is not assigned!"); 
         }
     }
-
+    [System.Serializable]
     public class Item
     {
         public string weaponName;
@@ -90,7 +95,7 @@ public class DropArea : MonoBehaviour
                 var item = currentItems.FirstOrDefault(i => i.weaponName == package.weaponName);
                 if (item != null)
                 {
-                    currentItems.Remove(item);
+                    //currentItems.Remove(item);
                     Debug.Log($"Removed {package.weaponName} from drop area.");
                 }
             }
@@ -269,6 +274,21 @@ public class DropArea : MonoBehaviour
             Debug.Log($"Slot {i}: Weapon = {remainingWeapons[i].weaponName}, Price = {remainingWeapons[i].weaponSellPrice}");
         }
     }
+    public List<Item> GetCurrentItems()
+    {
+        return currentItems;
+    }
+
+    public void ClearItems()
+    {
+        currentItems.Clear();
+    }
+
+    public void AddItem(Item item)
+    {
+        currentItems.Add(item);
+    }
+
 
 
 

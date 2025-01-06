@@ -11176,6 +11176,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 007c59620d432f640bce55bfbae58d33, type: 2}
   - {fileID: 11400000, guid: 109e180bb5764a047bf32563cfa15acd, type: 2}
   - {fileID: 11400000, guid: de7c24cb51d19be46953b6e6c041e5d3, type: 2}
+  dropArea: {fileID: 992692436}
 --- !u!1 &956353238
 GameObject:
   m_ObjectHideFlags: 0

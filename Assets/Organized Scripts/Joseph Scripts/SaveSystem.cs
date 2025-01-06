@@ -8,7 +8,9 @@ public class SaveSystem : MonoBehaviour
     public static SaveSystem Instance;
 
     private string saveFilePath;
-        [SerializeField] private Weapon[] allWeapons; // Reference to all weapon ScriptableObjects
+    [SerializeField] private Weapon[] allWeapons; // Reference to all weapon ScriptableObjects
+    [SerializeField] private DropArea dropArea; // Reference to the DropArea assigned in the Inspector
+
 
 
     private void Awake()
@@ -41,13 +43,23 @@ public class SaveSystem : MonoBehaviour
     }
 
     [System.Serializable]
+    public class ItemEntry
+    {
+        public string weaponName;
+        public int weaponSellPrice;
+        public int weaponQuantity;
+    }
+
+    [System.Serializable]
     public class SaveData
     {
         public int day;
         public int coins;
         public List<ResourceEntry> resources;
         public int currentChapter;
-        public List<WeaponEntry> weapons; // Hardcoded list of weapons
+        public List<WeaponEntry> weapons; 
+        public List<ItemEntry> dropAreaItems; 
+
     }
 
     public void SaveGame()
@@ -94,7 +106,15 @@ public class SaveSystem : MonoBehaviour
                 new WeaponEntry { weaponName = "SilverDagger", unlocked = WeaponManager.Instance.IsWeaponUnlocked("SilverDagger") },
                 new WeaponEntry { weaponName = "SilverSword", unlocked = WeaponManager.Instance.IsWeaponUnlocked("SilverSword") },
                 new WeaponEntry { weaponName = "Wooden Hammer", unlocked = WeaponManager.Instance.IsWeaponUnlocked("Wooden Hammer") }
-            }
+            },
+            dropAreaItems = dropArea != null
+                ? dropArea.GetCurrentItems().ConvertAll(item => new ItemEntry
+                {
+                    weaponName = item.weaponName,
+                    weaponSellPrice = item.weaponSellPrice,
+                    weaponQuantity = item.weaponQuantity
+                })
+                : new List<ItemEntry>()
         };
 
         try
@@ -132,6 +152,19 @@ public class SaveSystem : MonoBehaviour
             foreach (var weaponEntry in data.weapons)
             {
                 WeaponManager.Instance.SetWeaponUnlockState(weaponEntry.weaponName, weaponEntry.unlocked);
+            }
+
+            if (dropArea != null)
+            {
+                dropArea.ClearItems();
+                foreach (var itemEntry in data.dropAreaItems)
+                {
+                    dropArea.AddItem(new DropArea.Item(
+                        itemEntry.weaponName,
+                        itemEntry.weaponSellPrice,
+                        itemEntry.weaponQuantity
+                    ));
+                }
             }
 
             Debug.Log("Game loaded successfully.");
