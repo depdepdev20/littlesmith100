@@ -78,7 +78,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private IEnumerator HandleCustomerMovement(GameObject customer, CustomerSchedule schedule)
     {
-        CustomerWalk customerWalk = customer.GetComponent<CustomerWalk>();
+        CustomerNPCWalk customerWalk = customer.GetComponent<CustomerNPCWalk>();
         if (customerWalk == null)
         {
             Debug.LogError("Customer does not have a CustomerWalk component!");
@@ -108,7 +108,7 @@ public class CustomerSpawner : MonoBehaviour
         DestroyCustomer(customer);
     }
 
-    private bool MoveToDestination(CustomerWalk customerWalk, Transform destination)
+    private bool MoveToDestination(CustomerNPCWalk customerWalk, Transform destination)
     {
         customerWalk.SetDestination(destination.position);
         float timer = 0f;
