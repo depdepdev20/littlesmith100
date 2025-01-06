@@ -10,6 +10,7 @@ public class SaveSystem : MonoBehaviour
     private string saveFilePath;
     [SerializeField] private Weapon[] allWeapons; // Reference to all weapon ScriptableObjects
     [SerializeField] private DropArea dropArea; // Reference to the DropArea assigned in the Inspector
+    private const string tempLoadFilePath = "load_flag.temp"; 
 
 
 
@@ -26,6 +27,18 @@ public class SaveSystem : MonoBehaviour
         }
 
         saveFilePath = Path.Combine(Application.persistentDataPath, "savefile.json");
+
+    }
+
+    public void Update()
+    {
+        string tempFilePath = Path.Combine(Application.persistentDataPath, tempLoadFilePath);
+        if (File.Exists(tempFilePath))
+        {
+            Debug.Log("Load signal detected. Loading game...");
+            LoadGame();
+            File.Delete(tempFilePath); // Remove the temp file after processing
+        }
     }
 
     [System.Serializable]

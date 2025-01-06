@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    private const string tempLoadFilePath = "load_flag.temp";
     private const float minVolumeValue = 0.0001f; // Prevents log10(0)
 
     private void Start()
@@ -22,6 +24,17 @@ public class MainMenu : MonoBehaviour
         MusicManager.Instance.TurnOffMusic(1.0f);
         SceneTransitionData.nextScene = "Prologue Scene";
         SceneManager.LoadScene("TransitionScene");
+    }
+    public void Load()
+    {
+        // Create a temporary file to signal loading
+        string tempFilePath = Path.Combine(Application.persistentDataPath, tempLoadFilePath);
+        File.WriteAllText(tempFilePath, "LOAD_GAME");
+
+        // Handle the scene transition to "Main"
+        MusicManager.Instance.TurnOffMusic(1.0f);
+        SceneTransitionData.nextScene = "Main"; // Set the next scene to "Main"
+        SceneManager.LoadScene("TransitionScene"); // Load the transition scene
     }
 
     public void Quit()
