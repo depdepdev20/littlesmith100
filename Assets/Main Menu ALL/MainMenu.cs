@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         MusicManager.Instance.TurnOffMusic(1.0f);
-        SceneTransitionData.nextScene = "Prologue Scene";
+        SceneTransitionData.nextScene = "Main";
         SceneManager.LoadScene("TransitionScene");
     }
     public void Load()
