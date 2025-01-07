@@ -71,7 +71,12 @@ public class SaveSystem : MonoBehaviour
         public List<ResourceEntry> resources;
         public int currentChapter;
         public List<WeaponEntry> weapons; 
-        public List<ItemEntry> dropAreaItems; 
+        public List<ItemEntry> dropAreaItems;
+
+        public int timestampHour;
+        public int timestampMinute;
+        public int timestampSecond;
+        public int lastDeductionDay; 
 
     }
 
@@ -81,6 +86,7 @@ public class SaveSystem : MonoBehaviour
         if (ResourceManagerCode.instance == null) Debug.LogError("ResourceManagerCode.instance is null!");
         if (ChapterManager.instance == null) Debug.LogError("ChapterManager.instance is null!");
         if (WeaponManager.Instance == null) Debug.LogError("WeaponManager.Instance is null!");
+        if (TimeManager.Instance == null) Debug.LogError("TimeManager.Instance is null!");
 
         // Create SaveData object
         SaveData data = new SaveData
@@ -128,7 +134,15 @@ public class SaveSystem : MonoBehaviour
                     weaponSellPrice = item.weaponSellPrice,
                     weaponQuantity = item.weaponQuantity
                 })
-                : new List<ItemEntry>()
+                : new List<ItemEntry>(),
+
+            // Save timestamp
+            timestampHour = TimeManager.Instance.GetTimestamp().hour,
+            timestampMinute = TimeManager.Instance.GetTimestamp().minute,
+            timestampSecond = TimeManager.Instance.GetTimestamp().second,
+            lastDeductionDay = ExpenseManager.Instance.GetLastDeductionDay() // Save lastDeductionDay
+
+
         };
 
         try
@@ -180,6 +194,9 @@ public class SaveSystem : MonoBehaviour
                     ));
                 }
             }
+
+            TimeManager.Instance.SetTimestamp(data.timestampHour, data.timestampMinute, data.timestampSecond);
+
 
             Debug.Log("Game loaded successfully.");
         }

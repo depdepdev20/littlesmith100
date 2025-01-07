@@ -6,11 +6,14 @@ using TMPro;
 
 public class ExpenseManager : MonoBehaviour
 {
+    public static ExpenseManager Instance { get; private set; }
+
     [Header("Base Expenses")]
     [SerializeField] private int baseRent = 1000;
     [SerializeField] private int baseTax = 500;
     [SerializeField] private int baseElectricity = 300;
     [SerializeField] private int basePropertyTax = 200;
+    private int lastDeductionDay = -1;
 
     [Header("Chapter-Specific Multipliers")]
     [SerializeField] private List<ChapterMultipliers> chapterMultipliers;
@@ -40,8 +43,9 @@ public class ExpenseManager : MonoBehaviour
         public float propertyTaxMultiplier = 1.0f;
     }
 
-    private void Start()
+    private void Awake()
     {
+
         // Ensure the notification panel is hidden initially
         if (expenseNotificationPanel != null)
         {
@@ -59,13 +63,20 @@ public class ExpenseManager : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         StartCoroutine(DeductExpensesRoutine());
     }
 
     private IEnumerator DeductExpensesRoutine()
     {
-        int lastDeductionDay = -1;
-
         while (true)
         {
             int totalDays = TimeManager.Instance.GetTotalDays();
@@ -165,4 +176,16 @@ public class ExpenseManager : MonoBehaviour
         if (expenseNotificationPanel != null)
             expenseNotificationPanel.SetActive(false);
     }
+
+    public int GetLastDeductionDay()
+    {
+        return lastDeductionDay;
+    }
+
+    public void SetLastDeductionDay(int day)
+    {
+        lastDeductionDay = day;
+        Debug.Log($"Last deduction day set to: {lastDeductionDay}");
+    }
+
 }

@@ -162,6 +162,17 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public void SetTimestamp(int hour, int minute, int second)
+    {
+        timestamp.hour = hour;
+        timestamp.minute = minute;
+        timestamp.second = second;
+
+        UpdateInspectorDisplays(); // Ensure displays are updated
+        UpdateSunAndMoon(); // Sync sun and moon positions
+    }
+
+
     public void UnregisterTracker(ITimeTracker listener)
     {
         listeners.Remove(listener);
