@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public static TimeManager Instance { get; private set; }
 
     [Header("Internal Clock")]
-    [SerializeField] private GameTimeStamp timestamp = new GameTimeStamp(1, GameTimeStamp.Season.Spring, 23, 58, 0);
+    [SerializeField] private GameTimeStamp timestamp = new GameTimeStamp(1, GameTimeStamp.Season.Spring, 6, 0, 0);
     [Tooltip("Set the current total days from the Inspector.")]
     [SerializeField] private int totalDays = 0;
     [SerializeField] private float timeScale = -1.0f;
