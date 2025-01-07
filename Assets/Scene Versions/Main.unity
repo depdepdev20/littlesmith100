@@ -948,63 +948,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109846286}
   m_Mesh: {fileID: 1826519786555285484, guid: 3eb48bb1a75296a488f627c2fbeaf09e, type: 3}
---- !u!1001 &112277814
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1283719166005369567, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_Name
-      value: c0-storyNPC-TheKnight-model
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.3107785
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.05945237
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9982312
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409759529979472802, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
 --- !u!1 &112962934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,16 +8345,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d370cb3d21f00b343b5e8fc1569cac01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefabs: []
-  spawnPoint: {fileID: 0}
-  maxNpcCount: 5
+  npcPrefabs:
+  - {fileID: 885073050}
+  spawnPoint: {fileID: 761217874}
+  maxNpcCount: 1
   npcSchedules:
   - weapon: {fileID: 11400000, guid: de7c24cb51d19be46953b6e6c041e5d3, type: 2}
     questSubmitted: {fileID: 11400000, guid: 1d8221bede3a15e4cbf9be230a6ef01c, type: 2}
-    spawnHour: 0
-    departureHour: 5
+    spawnHour: 6
+    departureHour: 7
     preIdleDestinations:
-    - {fileID: 761217874}
     - {fileID: 332111806}
     - {fileID: 1216440073}
     idleDestination: {fileID: 1901114559}
@@ -10806,6 +10749,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 31.129, y: 180, z: 0}
+--- !u!1 &885073050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1283719166005369567, guid: 783c5206cc8198a4b8f20ade753034f8, type: 3}
+  m_PrefabInstance: {fileID: 1264813000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &891868659
 GameObject:
   m_ObjectHideFlags: 0
@@ -10904,28 +10852,13 @@ GameObject:
   - component: {fileID: 905536993}
   - component: {fileID: 905536992}
   - component: {fileID: 905536991}
-  - component: {fileID: 905536990}
   m_Layer: 0
   m_Name: Main Camera(follow) (2)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &905536990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905536989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc80e5d0e82755d48ba7a9a506ce9d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1873500666}
-  offset: {x: 0, y: 0, z: 0}
+  m_IsActive: 0
 --- !u!81 &905536991
 AudioListener:
   m_ObjectHideFlags: 0
@@ -16433,6 +16366,7 @@ GameObject:
   - component: {fileID: 1403926378}
   - component: {fileID: 1403926377}
   - component: {fileID: 1403926379}
+  - component: {fileID: 1403926380}
   m_Layer: 0
   m_Name: Time Manager
   m_TagString: Untagged
@@ -16467,7 +16401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalDays: 1
-  timeScale: 100
+  timeScale: 200
   currentDayDisplay: 
   currentTimeDisplay: 
   sunTransform: {fileID: 267582893}
@@ -16543,6 +16477,36 @@ MonoBehaviour:
   expenseMessage: {fileID: 519454702}
   notificationDuration: 2
   notificationSound: {fileID: 8300000, guid: 15f51e6736746c843bda61d2d5e3fa1b, type: 3}
+--- !u!114 &1403926380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403926373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d207b1e7a152744e9f4fe5ab4ed281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolVariableSettings:
+  - boolVariable: {fileID: 11400000, guid: 46d36d31d01dbaf44a4fdc65ab8b9d67, type: 2}
+    initialValue: 0
+  - boolVariable: {fileID: 11400000, guid: 09211d88418d43a488cb615682731408, type: 2}
+    initialValue: 1
+  - boolVariable: {fileID: 11400000, guid: 3dd76d765f65aaf468b13b2eac540dda, type: 2}
+    initialValue: 0
+  - boolVariable: {fileID: 11400000, guid: 1d8221bede3a15e4cbf9be230a6ef01c, type: 2}
+    initialValue: 0
+  - boolVariable: {fileID: 11400000, guid: 1d8221bede3a15e4cbf9be230a6ef01c, type: 2}
+    initialValue: 0
+  intVariableSettings:
+  - intVariable: {fileID: 11400000, guid: 20fa5770fd22b344f8225a698884df26, type: 2}
+    initialValue: 0
+  - intVariable: {fileID: 11400000, guid: 48b97378e1c3acf429de718f1e7fef99, type: 2}
+    initialValue: 100
+  - intVariable: {fileID: 11400000, guid: 8378f48ddcd88764da56594ca7203d1d, type: 2}
+    initialValue: 2000
 --- !u!1 &1404139369
 GameObject:
   m_ObjectHideFlags: 0
@@ -36770,7 +36734,6 @@ SceneRoots:
   - {fileID: 1685240997}
   - {fileID: 410470409}
   - {fileID: 716082885}
-  - {fileID: 112277814}
   - {fileID: 4830722735638879099}
   - {fileID: 1579738807}
   - {fileID: 1337482674}
